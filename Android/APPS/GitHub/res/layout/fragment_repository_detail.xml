@@ -1,0 +1,78 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    tools:context="itworx.github.task.RepositoryDetailFragment" >
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        <RelativeLayout 
+		    android:layout_width="fill_parent"
+		    android:layout_height="fill_parent"
+		    android:padding="5dp">
+		
+		    <ImageView
+		        android:id="@+id/owner_image"
+		        android:layout_width="100dp"
+		        android:layout_height="100dp"
+		        android:layout_centerHorizontal="true"
+		        android:layout_marginTop="@dimen/margin"
+		        android:contentDescription="@string/owner_avatar_image" />
+		
+		    <TextView
+		        android:id="@+id/repository_title"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_alignParentLeft="true"
+		        android:layout_below="@+id/owner_image"
+		        android:drawableLeft="@drawable/icon"
+		        android:gravity="center_vertical"
+		        android:textAppearance="?android:attr/textAppearanceLarge"
+		        android:textColor="@color/name" />
+		
+		    <TextView
+		        android:id="@+id/cdate"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_alignLeft="@+id/repository_title"
+		        android:layout_below="@+id/repository_title"
+		        android:layout_marginLeft="10dp" />
+		    
+	        <TextView
+	            android:id="@+id/url_text"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_alignLeft="@+id/cdate"
+	            android:layout_below="@+id/cdate"
+	            android:layout_marginTop="20dp"
+	            android:text="@string/repository_url"
+	            android:textAppearance="?android:attr/textAppearanceLarge"
+	            android:textSize="18sp" />
+		
+		    <itworx.github.task.views.UnderlineTextView
+		        android:id="@+id/html_url"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_alignLeft="@+id/url_text"
+		        android:layout_below="@+id/url_text"
+		        android:textAppearance="?android:attr/textAppearanceLarge"
+		        android:textColor="@color/name"
+		        android:textSize="18sp" />
+		    
+		    <ImageView
+		        android:id="@+id/imageView1"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_below="@+id/html_url"
+		        android:layout_centerHorizontal="true"
+		        android:layout_marginTop="10dp"
+		        android:src="@drawable/github_logo"
+		        android:contentDescription="@string/github_logo" />
+		
+		</RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#3b3440"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true" >
+
+    <TextView
+        android:id="@+id/forgot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/login"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="Forgot Password?"
+        android:textColor="#FFFFFF" />
+
+    <Button
+        android:id="@+id/login"
+        android:layout_width="175dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/pass_cred"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/login_selector"
+        android:paddingLeft="50dp"
+        android:paddingRight="50dp"
+        android:text="Login"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="17dp"
+        android:src="@drawable/logors" />
+
+    <RelativeLayout
+        android:id="@+id/RelativeLayout2"
+        android:layout_width="fill_parent"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:background="#322c36"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="10dp" >
+
+        <TextView
+            android:id="@+id/TextView02"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_above="@+id/signup"
+            android:layout_centerHorizontal="true"
+            android:layout_weight="1"
+            android:background="@drawable/fbback"
+            android:drawableLeft="@drawable/fbibi"
+            android:drawablePadding="10dp"
+            android:gravity="center"
+            android:paddingBottom="5dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="5dp"
+            android:text="Login with Facebook"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#ffffff"
+            android:textSize="16sp" />
+
+        <dev.vision.relationshipninjas.views.UnderlineTextView
+            android:id="@+id/signup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="18dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Sign Up for The Relationship Ninjas"
+            android:textColor="#FFFFFF" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/note"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:background="#302a34"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="Password reset instructions have\n been sent to email@address.com"
+        android:textColor="@android:color/background_light"
+        android:visibility="invisible" />
+
+    <EditText
+        android:id="@+id/pass_cred"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/email_add"
+        android:layout_alignRight="@+id/email_add"
+        android:layout_below="@+id/email_add"
+        android:drawableLeft="@drawable/passl"
+        android:drawablePadding="15dp"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:textColor="@android:color/white" >
+    </EditText>
+
+    <EditText
+        android:id="@+id/email_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/note"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="15dp"
+        android:drawableLeft="@drawable/mail"
+        android:drawablePadding="15dp"
+        android:ems="15"
+        android:hint="Email Address"
+        android:textColor="@android:color/white" />
+
+</RelativeLayout>

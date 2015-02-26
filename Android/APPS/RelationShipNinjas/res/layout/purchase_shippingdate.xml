@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Birthday occasion on July August 4, 2014"
+        android:textColor="@android:color/black" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:text="When would you like it delivered?*\n Step 3/4"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="5dp"
+        android:gravity="center" >
+
+        <ImageView
+            android:id="@+id/minusday"
+            android:layout_width="50dp"
+            android:layout_height="75dp"
+            android:rotation="180"
+            android:src="@drawable/arro" />
+
+        <RelativeLayout
+            android:id="@+id/RelativeLayout1"
+            android:layout_width="200dp"
+            android:layout_height="220dp"
+            android:background="@drawable/back" >
+
+            <TextView
+                android:id="@+id/day"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="30"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@android:color/secondary_text_light"
+                android:textSize="100sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/day"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:text="Sunday"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@android:color/secondary_text_light"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/date"
+                android:layout_alignParentRight="true"
+                android:layout_alignTop="@+id/date"
+                android:src="@drawable/date_selected" />
+
+            <TextView
+                android:id="@+id/monthyear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/day"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:text="JULY 2014"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@android:color/secondary_text_light"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/addday"
+            android:layout_width="50dp"
+            android:layout_height="75dp"
+            android:src="@drawable/arro" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:text="5 days before her Birthday occasion"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@android:color/secondary_text_light"
+        android:textStyle="bold"
+        android:typeface="normal" />
+
+    <TextView
+        android:id="@+id/Continue"
+        android:layout_width="220dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:background="@drawable/blue_btn"
+        android:gravity="center"
+        android:text="Continue"
+        android:textColor="#ffffff"
+        android:textSize="18sp" />
+
+</LinearLayout>

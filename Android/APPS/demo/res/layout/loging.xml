@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backk"
+    android:orientation="vertical"
+    android:padding="30dp" >
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:scaleType="fitCenter"
+        android:src="@drawable/bobdog" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/imageView1"
+        android:layout_centerHorizontal="true"
+        android:text="BOBDOG APPLICATION"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="32sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/TextView01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+        android:lineSpacingExtra="10dp"
+        android:text="BSR Trading Pty Ltd. \n1300 10 10 22"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <RelativeLayout
+        android:id="@+id/RelativeLayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/TextView01"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/frame_text"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="20dp" >
+        
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/storeid"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="-4dp"
+            android:background="@drawable/chooser_back"
+            android:paddingBottom="10dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingTop="10dp"
+            android:text="LOGIN"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#ffffff"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/storeid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/clicked"
+            android:ems="10"
+            android:hint="Store Code"
+            android:minHeight="50dp"
+            android:minWidth="300dp"
+            android:padding="10dp" >
+
+        </EditText>
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/imageView1"
+        android:layout_below="@+id/RelativeLayout2"
+        android:layout_marginTop="40dp"
+        android:text="Disclaimer: The contents of this quote  are for informational purposes only and does not constitute a contract or agreement. Content of the quote  is considered private and as such is bound by The Privacy Act. You can request our Privacy Statement by contacting the company on 1300 10 10 22 or admin@bsrtrading.com.au and a copy will be forwarded to you.
+        \n\nThis quote  software and accompanying data contains information that is confidential and subject to copyright and other restrictions. All of its content are to be treated as confidential unless otherwise specified, and it is not to be forwarded to third parties without the prior permission of BSR Trading Pty Ltd ACN:161 104 801."
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="24sp" />
+
+</RelativeLayout>

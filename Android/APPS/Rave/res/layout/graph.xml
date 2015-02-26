@@ -1,0 +1,57 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ProgressWheel="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rela"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <dev.vision.rave.progresswheel.HeartChart
+        android:id="@+id/progressBarTwo"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        ProgressWheel:barColor="#99FFFFFF"
+        ProgressWheel:barLength="60dp"
+        ProgressWheel:barWidth="19dp"
+        ProgressWheel:rimColor="#44000000"
+        ProgressWheel:rimWidth="20dp"
+        ProgressWheel:spinSpeed="1dp"
+        ProgressWheel:textColor="#98FFFFFF"
+        ProgressWheel:textSize="26sp" />
+
+    <LinearLayout
+        android:id="@+id/LinearLayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/TextView01"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/malesigns"
+            android:drawablePadding="10dp"
+            android:gravity="center"
+            android:text="200"
+            android:textColor="@color/white"
+            android:textSize="26sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:drawableLeft="@drawable/femalesigns"
+            android:drawablePadding="10dp"
+            android:gravity="center"
+            android:text="20"
+            android:textColor="@color/white"
+            android:textSize="26sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</RelativeLayout>

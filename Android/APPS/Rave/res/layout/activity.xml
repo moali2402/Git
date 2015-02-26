@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:CircularImage="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+	 <dev.vision.rave.listeners.ScrollableListView
+	     android:id="@android:id/list"
+	     android:layout_width="match_parent"
+	     android:layout_height="wrap_content"
+	     android:layout_alignParentTop="true"
+	     android:clipChildren="true"
+	     android:clipToPadding="false"
+	     android:divider="@null"
+	     android:dividerHeight="10dp"
+	     android:descendantFocusability="beforeDescendants"
+	     android:scrollbars="none" />
+	 
+	 <dev.vision.rave.views.AdvancedRelativeLayout
+	     android:id="@+id/profile_sticky"
+	     style="@style/Item.Sticky"
+	     android:layout_width="fill_parent"
+	     android:layout_height="@dimen/shadeHeight"
+	     android:padding="10dp" >
+	
+		<LinearLayout
+		    android:id="@+id/ll"
+		    android:layout_width="fill_parent"
+		    android:layout_height="fill_parent"
+		    android:layout_alignParentBottom="false"
+		    android:layout_alignParentLeft="false"
+		    android:layout_alignParentRight="false"
+		    android:layout_alignParentTop="false"
+		    android:layout_centerInParent="true"
+		    android:background="@drawable/frame_text"
+		    android:gravity="center"
+		    android:orientation="horizontal" >
+	
+			<TextView
+			    android:id="@+id/TextView01"
+			    android:layout_width="fill_parent"
+			    android:layout_height="fill_parent"
+			    android:layout_weight="1"
+			    android:background="@drawable/button_frame"
+			    android:gravity="center"
+			    android:text="All Activities"
+			    android:textColor="#FFF" />
+	
+			<TextView
+			    android:id="@+id/textView1"
+			    android:layout_width="fill_parent"
+			    android:layout_height="fill_parent"
+			    android:layout_weight="1"
+			    android:gravity="center"
+			    android:text="Friend&apos;s Activities"
+			    android:textColor="#FFF" />
+	
+		     </LinearLayout>
+
+	 </dev.vision.rave.views.AdvancedRelativeLayout>
+
+	 <ImageView
+	     android:id="@+id/scrolltotop"
+	     android:layout_width="wrap_content"
+	     android:layout_height="50dp"
+	     android:layout_alignParentBottom="true"
+	     android:layout_alignParentRight="true"
+	     android:layout_marginBottom="-50dp"
+	     android:layout_marginRight="10dp"
+	     android:src="@drawable/_ic_scrolltotop"/>
+
+</RelativeLayout>

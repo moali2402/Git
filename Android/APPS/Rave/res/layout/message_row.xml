@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:CircularImage="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <dev.vision.rave.views.HexContactStatusIcon
+        android:id="@+id/contactIcon"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_margin="5dp"
+        CircularImage:borderWidth="0dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bby" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/contactIcon"
+        android:layout_alignTop="@+id/contactIcon"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_toLeftOf="@+id/time"
+        android:layout_toRightOf="@+id/contactIcon"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/userName"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:text="Name"
+            android:textColor="@color/TextColor"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/message_preview"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_gravity="clip_vertical"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:maxLines="2"
+            android:text="Hi!! Wanna meet today?"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+    <dev.vision.rave.views.SquareText
+        android:id="@+id/notification"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignTop="@+id/contactIcon"
+        android:background="@drawable/red_notification"
+        android:gravity="center"
+        android:padding="3dp"
+        android:text="1"
+        android:textColor="@color/TextColor" />
+
+    <dev.vision.rave.views.AutoResizeTextView
+        android:id="@+id/time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:drawableLeft="@drawable/yy"
+        android:drawablePadding="2dp"
+        android:gravity="center"
+        android:text="10h"
+        android:textColor="@color/TextColor"
+        android:textSize="14sp" />
+
+</RelativeLayout>

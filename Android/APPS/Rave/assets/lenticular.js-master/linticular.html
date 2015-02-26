@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Personality Chart</title>
+		<script src="js/jquery-1.8.0.min.js"></script>
+		<script src="js/modernizr.js"></script>
+		<script src="js/lenticular.min.js"></script>
+		<script src="js/base.js"></script>
+		
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/base.css">
+		<meta name = "viewport" content = "width=700, height=700,  initial-scale = 1.0, user-scalable = no">
+		<style>
+			lenticular{
+				margin-top: -40px;
+				margin-bottom: auto;
+   				padding:0;
+   				margin-left: auto;
+			    margin-right: auto;
+			    display: block;
+			}
+		</style>
+	</head>
+	<body>
+	<div class="lenticular mm"></div>
+	
+	<script>
+		var myLenticular = new Lenticular.Image($('.lenticular')[0], {
+		  images: 'images/selfie-##.jpg',
+		  frames: 16
+		});	
+		
+		myLenticular.activate();
+	</script>
+	</body>
+</html>

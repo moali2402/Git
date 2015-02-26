@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ProgressWheel="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/startupback"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:id="@+id/LinearLayout1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:padding="5dp" >
+
+            <ImageView
+                android:id="@+id/back"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/x" />
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="Something Cool is coming here"
+                android:textAllCaps="true"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <dev.vision.rave.progresswheel.ProgressWheel
+            android:id="@+id/progressBarTwo"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="20dp"
+            android:layout_weight="1"
+            ProgressWheel:barColor="#99FFFFFF"
+            ProgressWheel:barLength="60dp"
+            ProgressWheel:barWidth="19dp"
+            ProgressWheel:rimColor="#44000000"
+            ProgressWheel:rimWidth="20dp"
+            ProgressWheel:spinSpeed="3dp"
+            ProgressWheel:textColor="#98FFFFFF"
+            ProgressWheel:textSize="32sp" />
+
+    </LinearLayout>
+
+</RelativeLayout>

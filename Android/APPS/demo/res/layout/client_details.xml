@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent" >
+
+    <LinearLayout
+        android:id="@+id/client_details_first"
+        android:layout_width="600dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.85" >
+
+        <TextView
+            android:id="@+id/client_details_TextView11"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.2"
+            android:ems="10"
+            android:text="Title" />
+
+        <TextView
+            android:id="@+id/client_details_TextView09"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:text="First Name" />
+
+        <TextView
+            android:id="@+id/client_details_TextView13"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:text="Middle Name" />
+
+        <TextView
+            android:id="@+id/client_details_TextView07"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.04"
+            android:ems="10"
+            android:text="Surname" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/client_details_first_e"
+        android:layout_width="600dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/client_details_first"
+        android:layout_marginTop="5dp"
+        android:layout_weight="0.85" >
+
+        <EditText
+            android:id="@+id/client_details_title"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.2"
+            android:background="@drawable/clicked"
+            android:ems="10"
+            android:hint="Title"
+            android:inputType="textCapSentences"
+            android:padding="10dp"
+            android:nextFocusDown="@+id/client_details_first_name" >
+
+        </EditText>
+
+        <EditText
+            android:id="@+id/client_details_first_name"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/clicked"
+            android:ems="10"
+            android:hint="First Name"
+            android:inputType="textCapWords"
+            android:nextFocusDown="@+id/client_details_middle_name"
+            android:padding="10dp" />
+
+        <EditText
+            android:id="@+id/client_details_middle_name"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/clicked"
+            android:ems="10"
+            android:hint="Middle Name"
+            android:inputType="textCapWords"
+            android:nextFocusDown="@+id/client_details_surname"
+            android:padding="10dp" />
+
+        <EditText
+            android:id="@+id/client_details_surname"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.04"
+            android:background="@drawable/clicked"
+            android:ems="10"
+            android:hint="Surname"
+            android:inputType="textCapWords"
+            android:nextFocusDown="@+id/client_details_address"
+            android:padding="10dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/client_details_second"
+        android:layout_width="600dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/client_details_first_e"
+        android:layout_marginTop="5dp"
+        android:layout_weight="0.85" >
+
+        <TextView
+            android:id="@+id/client_details_TextView14"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight=".65"
+            android:ems="10"
+            android:text="Address" />
+
+        <TextView
+            android:id="@+id/client_details_TextView10"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.04"
+            android:ems="10"
+            android:text="Suburb" />
+
+        <TextView
+            android:id="@+id/client_details_TextView23"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.04"
+            android:ems="10"
+            android:text="P/Code" />
+
+        <TextView
+            android:id="@+id/client_details_TextView12"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:text="State" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/client_details_second_e"
+        android:layout_width="600dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/client_details_second"
+        android:layout_marginTop="5dp"
+        android:layout_weight="0.85" >
+
+        <EditText
+            android:id="@+id/client_details_address"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight=".65"
+            android:background="@drawable/clicked"
+            android:ems="10"
+            android:hint="Address"
+            android:inputType="textCapWords"
+            android:nextFocusDown="@+id/client_details_suburb"
+            android:padding="10dp" />
+
+        <EditText
+            android:id="@+id/client_details_suburb"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.04"
+            android:background="@drawable/clicked"
+            android:ems="10"
+            android:hint="Suburb"
+            android:inputType="textCapWords"
+            android:nextFocusDown="@+id/client_details_pcode"
+            android:padding="10dp" />
+
+        <EditText
+            android:id="@+id/client_details_pcode"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.04"
+            android:background="@drawable/clicked"
+            android:ems="10"
+            android:hint="P/Code"
+            android:inputType="textCapCharacters"
+            android:nextFocusDown="@+id/client_details_state"
+            android:padding="10dp" />
+
+        <EditText
+            android:id="@+id/client_details_state"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/clicked"
+            android:ems="10"
+            android:hint="State"
+            android:inputType="textCapCharacters"            
+            android:nextFocusDown="@+id/client_details_mobile"
+            android:padding="10dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/client_details_LinearLayout01"
+        android:layout_width="600dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/client_details_second_e"
+        android:layout_marginTop="10dp"
+        android:layout_weight="0.85" >
+
+        <TextView
+            android:id="@+id/client_details_TextView02"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:text="Mobile" />
+
+        <TextView
+            android:id="@+id/client_details_TextView01"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.04"
+            android:ems="10"
+            android:text="Home" />
+
+        <TextView
+            android:id="@+id/client_details_TextView04"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:text="Work" />
+
+        <TextView
+            android:id="@+id/client_details_TextView05"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:text="Date Of Birth" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/client_details_LinearLayout02"
+        android:layout_width="600dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/client_details_LinearLayout01"
+        android:layout_weight="0.85" >
+
+        <EditText
+            android:id="@+id/client_details_mobile"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/clicked"
+            android:ems="10"
+            android:inputType="phone"
+            android:nextFocusDown="@+id/client_details_home"
+            android:hint="Mobile No."
+            android:padding="10dp" />
+
+        <EditText
+            android:id="@+id/client_details_home"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.04"
+            android:background="@drawable/clicked"
+            android:ems="10"
+            android:hint="Home No."
+            android:inputType="phone"
+            android:maxLength="10"
+            android:nextFocusDown="@+id/client_details_work"
+            android:padding="10dp" />
+
+        <EditText
+            android:id="@+id/client_details_work"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/clicked"
+            android:ems="10"
+            android:hint="Work No."
+            android:inputType="phone"
+            android:maxEms="10"
+            android:maxLength="10"
+            android:nextFocusDown="@+id/client_details_id"
+            android:padding="10dp" />
+
+        <EditText
+            android:id="@+id/client_details_dob"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/clicked"
+            android:clickable="true"
+            android:editable="false"
+            android:ems="10"
+            android:focusable="false"
+            android:hint="D.O.B"
+            android:inputType="none"
+            android:padding="10dp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/client_details_TextView06"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/client_details_LinearLayout02"
+        android:layout_marginLeft="180dp"
+        android:layout_marginTop="5dp"
+        android:padding="10dp"
+        android:text="Driving License Number / 18+ Card"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <EditText
+        android:id="@+id/client_details_id"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/client_details_TextView06"
+        android:layout_alignRight="@+id/client_details_TextView06"
+        android:layout_below="@+id/client_details_TextView06"
+        android:layout_marginLeft="-20dp"
+        android:layout_marginRight="-20dp"
+        android:layout_weight="1"
+        android:background="@drawable/clicked"
+        android:ellipsize="end"
+        android:ems="10"
+        android:hint="Driving License Number / 18+ Card"
+        android:lines="1"
+        android:maxLines="1"
+        android:imeOptions="actionNext"
+        android:inputType="text"
+        android:nextFocusDown="@+id/client_details_notes"
+        android:padding="10dp" />
+
+    <TextView
+        android:id="@+id/client_details_TextView21"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/client_details_id"
+        android:layout_marginTop="10dp"
+        android:text="Notes"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <EditText
+        android:id="@+id/client_details_notes"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/client_details_TextView21"
+        android:layout_marginTop="14dp"
+        android:background="@drawable/clicked"
+        android:gravity="center_vertical|top"
+        android:hint="Notes"
+        android:imeOptions="actionDone"
+        android:inputType="textCapSentences|textMultiLine"
+        android:minLines="5"
+        android:padding="10dp" />
+
+</RelativeLayout>

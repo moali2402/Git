@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:CircularImage="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <dev.vision.rave.listeners.ScrollableListView
+        android:id="@android:id/list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:clipToPadding="false"
+        android:dividerHeight="1dp"
+        android:scrollbars="none" />
+
+ <RelativeLayout
+     android:id="@+id/profile_sticky"
+     style="@style/Item.Sticky"
+     android:layout_width="fill_parent"
+     android:layout_height="50dp"
+     android:layout_alignParentBottom="false"
+     android:layout_alignParentTop="true"
+     android:background="#FFFFFF" >
+
+	<LinearLayout
+	    android:id="@+id/ll"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_alignParentBottom="false"
+	    android:layout_alignParentLeft="false"
+	    android:layout_alignParentRight="false"
+	    android:layout_alignParentTop="false"
+	    android:layout_centerInParent="true"
+	    android:divider="@drawable/splitter"
+	    android:dividerPadding="10dp"
+	    android:orientation="horizontal"
+	    android:showDividers="middle" >
+
+		<ImageView
+		    android:id="@+id/ImageView04"
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:layout_margin="10dp"
+		    android:layout_weight="1"
+		    android:adjustViewBounds="true"
+		    android:gravity="center"
+		    android:scaleType="centerInside"
+		    android:src="@drawable/maplocation"
+		    android:text="Location" />
+	
+		<ImageView
+		    android:id="@+id/camera_show"
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:layout_weight="1"
+		    android:adjustViewBounds="true"
+		    android:gravity="center"
+		    android:padding="5dp"
+		    android:scaleType="fitCenter"
+		    android:src="@drawable/r_cam_ic_normal" />
+	
+	     <ImageView
+	         android:id="@+id/camera"
+	         android:layout_width="fill_parent"
+	         android:layout_height="wrap_content"
+	         android:layout_margin="10dp"
+	         android:layout_weight="1"
+	         android:adjustViewBounds="true"
+	         android:gravity="center"
+	         android:scaleType="centerInside"
+	         android:src="@drawable/sett"
+	         android:text="Location" />
+
+	     </LinearLayout>
+		
+
+    </RelativeLayout>
+
+ <ImageView
+     android:id="@+id/scrolltotop"
+     android:layout_width="wrap_content"
+     android:layout_height="50dp"
+     android:layout_alignParentBottom="true"
+     android:layout_alignParentRight="true"
+     android:layout_marginBottom="-50dp"
+     android:layout_marginRight="10dp"
+     android:src="@drawable/_ic_scrolltotop"/>
+
+</RelativeLayout>

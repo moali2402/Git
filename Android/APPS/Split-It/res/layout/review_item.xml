@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res/dev.vision.split.it"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/review_back"
+    android:orientation="vertical"
+    android:padding="25dp" >
+
+ <com.github.siyamed.shapeimageview.HexagonImageView
+     android:id="@+id/hexagonImageView1"
+     android:layout_width="75dp"
+     android:layout_height="75dp"
+     android:layout_alignParentLeft="true"
+     android:layout_alignParentTop="true"
+     android:layout_marginRight="10dp"
+     android:src="@drawable/bby"
+     app:BorderColor="@android:color/black"
+     app:BorderWidth="2dp"
+     app:borderCorner="3dp"
+     app:overlay="@drawable/paidd" />
+
+    <dev.vision.split.it.extras.BoldGillsansTextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/hexagonImageView1"
+        android:layout_toRightOf="@+id/hexagonImageView1"
+        android:text="NAME"
+        android:textColor="#fff"
+        android:textSize="22sp" />
+
+    <dev.vision.split.it.extras.GillsansTextView
+        android:id="@+id/time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/review_ratingbar"
+        android:layout_alignLeft="@+id/name"
+        android:layout_below="@+id/name"
+        android:drawableLeft="@drawable/feed_clock"
+        android:drawablePadding="5dp"
+        android:gravity="center_vertical"
+        android:text="GillsansTextView"
+        android:textColor="#fff"
+        android:textSize="14sp" />
+
+    <RatingBar
+        android:id="@+id/review_ratingbar"
+        style="@style/RatingBarAppTheme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/hexagonImageView1"
+        android:layout_alignRight="@+id/name"
+        android:minHeight="30dp"
+        android:mirrorForRtl="false"
+        android:numStars="5" />
+
+    <dev.vision.split.it.extras.GillsansTextView
+        android:id="@+id/gillsansTextView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/review_ratingbar"
+        android:layout_alignTop="@+id/review_ratingbar"
+        android:layout_toRightOf="@+id/hexagonImageView1"
+        android:gravity="center_vertical"
+        android:text="Rating"
+        android:textColor="#fff" />
+
+    <dev.vision.split.it.extras.Expandable_TextView
+        android:id="@+id/feedback"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/hexagonImageView1"
+        android:layout_marginTop="17dp"
+        android:text="feedbacckfeedbacckfeedbacckfeedbacckfeedbacckfeedbacckfeedbacckfeedbacckfeedbacckfeedbacckfeedbacckfeedbacckfeedbacckfeedbacckfeedbacckfeedbacckfeedbacckfeedbacckfeedbacck
+        feedbacckfeedbacckfeedbacckfeedbacckfeedbacckfeedbacckfeedbacckfeedbacck
+        feedbacckfeedbacckfeedbacckfeedbacckfeedbacckfeedbacckfeedbacckfeedbacck
+        feedbacckfeedbacckfeedbacckfeedbacckfeedbacckfeedbacckfeedbacckfeedbacckfeedbacck
+        feedbacckfeedbacckfeedbacckfeedbacckfeedbacckfeedbacckfeedbacckfeedbacckfeedbacckfeedbacck
+        feedbacckfeedbacckfeedbacckfeedbacckfeedbacckfeedbacckfeedbacckfeedbacckfeedbacck
+        feedbacckfeedbacckfeedbacckfeedbacckfeedbacckfeedbacckfeedbacckfeedbacck
+        feedbacckfeedbacckfeedbacckfeedbacckfeedbacckfeedbacckfeedbacckfeedbacck
+        feedbacckfeedbacckfeedbacckfeedbacckfeedbacckfeedbacckfeedbacckfeedbacckfeedbacck"
+        android:textColor="#fff" />
+
+</RelativeLayout>

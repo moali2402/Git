@@ -1,0 +1,215 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/backk"
+    android:orientation="vertical"
+    tools:context="com.example.demo.MainActivity" >
+
+    <ScrollView
+        android:id="@+id/ScrollView1"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:fadingEdge="horizontal|vertical"
+        android:scrollbars="horizontal|vertical" >
+
+        <LinearLayout
+            android:id="@+id/LinearLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:minHeight="727dp"
+            tools:context="com.example.demo.MainActivity" >
+
+            <include
+                android:id="@+id/left"
+                android:layout_width="200dp"
+                android:layout_height="match_parent"
+                layout="@layout/left" />
+
+            <TabHost
+                android:id="@+id/tabhost"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:padding="10dp" >
+
+                <RelativeLayout
+                    android:id="@+id/RelativeLayout1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:orientation="vertical" >
+
+                    <TabWidget
+                        android:id="@android:id/tabs"
+                        android:layout_width="600dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:divider="@null"
+                        android:showDividers="none"
+                        android:visibility="gone" >
+                    </TabWidget>
+
+                    <LinearLayout
+                        android:id="@+id/xx"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignTop="@android:id/tabs"
+                        android:orientation="horizontal" >
+
+                        <LinearLayout
+                            android:id="@+id/LinearLayout01"
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:orientation="vertical" >
+
+                            <TextView
+                                android:id="@+id/TextView01"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:padding="10dp"
+                                android:text="Sales Rep"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:textSize="20sp" />
+
+                            <TextView
+                                android:id="@+id/TextView06"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_weight="1"
+                                android:padding="10dp"
+                                android:text="Store Code"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:textSize="20sp" />
+
+                            <TextView
+                                android:id="@+id/TextView02"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:padding="10dp"
+                                android:text="Date"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:textSize="20sp" />
+
+                            <TextView
+                                android:id="@+id/TextView03"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:padding="10dp"
+                                android:text="Quote #"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:textSize="20sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/LinearLayout1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical" >
+
+                            <TextView
+                                android:id="@+id/salesrep"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:background="@drawable/uclicked"
+                                android:gravity="center"
+                                android:lines="1"
+                                android:maxLines="1"
+                                android:padding="10dp"
+                                android:textAllCaps="true"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:textSize="20sp" />
+
+                            <TextView
+                                android:id="@+id/storecode"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/uclicked"
+                                android:gravity="center"
+                                android:padding="10dp"
+                                android:textAllCaps="true"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:textSize="20sp" />
+
+                            <TextView
+                                android:id="@+id/date"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/uclicked"
+                                android:gravity="center"
+                                android:padding="10dp"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:textSize="20sp" />
+
+                            <TextView
+                                android:id="@+id/quote_id"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:background="@drawable/uclicked"
+                                android:gravity="center"
+                                android:padding="10dp"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:textSize="20sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <FrameLayout
+                        android:id="@android:id/tabcontent"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:paddingBottom="50dp" >
+
+                        <RelativeLayout
+                            android:id="@+id/home"
+                            android:layout_width="match_parent"
+                            android:layout_height="fill_parent" >
+                        </RelativeLayout>
+
+                        <include
+                            android:id="@+id/tab1"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            layout="@layout/quote" />
+
+                        <include
+                            android:id="@+id/tab2"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            layout="@layout/client_details" />
+
+                        <include
+                            android:id="@+id/tab3"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            layout="@layout/attachments" />
+                    </FrameLayout>
+                </RelativeLayout>
+            </TabHost>
+        </LinearLayout>
+    </ScrollView>
+
+    <include
+        android:id="@+id/recall_banner"
+        android:layout_width="275dp"
+        android:layout_height="fill_parent"
+        android:layout_marginLeft="200dp"
+        layout="@layout/recall_list"
+        android:visibility="gone" />
+
+</RelativeLayout>

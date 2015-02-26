@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#e2fafafa"
+    android:orientation="vertical"
+    android:weightSum="5" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/sinch_purple"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/remoteUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="10dp"
+            android:text=""
+            android:textColor="@color/off_white"
+            android:textSize="28sp" />
+
+        <TextView
+            android:id="@+id/callState"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Ringing"
+            android:textAllCaps="true"
+            android:textColor="@color/off_white"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/callDuration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="4dp"
+            android:text="00:00"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/off_white"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:padding="0dip" >
+        
+        <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:contentDescription="Call background"
+        android:padding="0dip" >
+
+    </ImageView>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:gravity="center" >
+
+            <ImageView
+                android:id="@+id/loud"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:clickable="true"
+                android:src="@drawable/button_loud_speaker" />
+
+            <ImageView
+                android:id="@+id/mute"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
+                android:clickable="true"
+                android:src="@drawable/button_mute" />
+
+            <ImageView
+                android:id="@+id/hide"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:clickable="true"
+                android:src="@drawable/ic_audiocall_hide" />
+
+        </LinearLayout>
+
+        <dev.vision.layback.views.HexContactStatusIcon
+            android:id="@+id/contactIcon"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/default_person" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/bottomPanel"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" >
+
+        <Button
+                android:id="@+id/hangupButton"
+                android:paddingBottom="20dp"
+                android:paddingTop="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:background="@drawable/button_end"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

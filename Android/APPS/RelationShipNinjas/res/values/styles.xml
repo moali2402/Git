@@ -1,0 +1,64 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    -->
+    <style name="AppBaseTheme" parent="Theme.AppCompat.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+
+     <style name="myRatingBar" parent="@android:style/Widget.RatingBar">
+        <item name="android:progressDrawable">@drawable/rating_heart_bar</item>
+        <item name="android:indeterminateDrawable">@drawable/rating_heart_bar</item>
+ 	</style>
+ 	
+     <style name="CustomTabPageIndicator" >
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/tab_indicator</item>        
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingBottom">12dp</item>
+        <item name="android:textAppearance">@style/TextAppearance.TabPageIndicator</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:textColor">#FF555555</item>
+    </style>
+ 	
+    <style name="NoTittle" parent="AppTheme">
+	    <item name="android:windowNoTitle">true</item>
+	    <item name="android:windowBackground">@drawable/back_color</item>
+	            <item name="vpiTabPageIndicatorStyle">@style/CustomTabPageIndicator</item>
+	    
+	    
+   </style>
+   
+    <style name="Theme.Transparent" parent="Theme.AppCompat.Light">
+        <item name="android:windowIsTranslucent">true</item>
+	    <item name="android:windowBackground">@drawable/cc</item>
+	    <item name="android:windowContentOverlay">@null</item>
+	    <item name="android:windowNoTitle">true</item>
+	    <item name="android:backgroundDimEnabled">false</item>
+	    
+  	                
+   </style>
+   
+    <drawable name="back_color">#3b3440</drawable>
+    <drawable name="cc">#e2ffffff</drawable>
+    <style name="OverlayDialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+</resources>

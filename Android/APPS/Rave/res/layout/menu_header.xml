@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res/dev.vision.rave"
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <dev.vision.rave.views.FirstName_Cap
+        android:id="@+id/userName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="Mo Adel"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@android:color/background_light"
+        app:cap="true" />
+
+    <!-- dev.vision.rave.views.CircularImageView
+        android:id="@+id/circularImageView"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/userName"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="20dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ki" /-->
+        
+   <com.github.siyamed.shapeimageview.HexagonImageView
+       android:id="@+id/circularImageView"
+       android:layout_width="fill_parent"
+       android:layout_height="150dp"
+       android:layout_above="@+id/userName"
+       android:layout_centerHorizontal="true"
+       android:layout_margin="8dp"
+       android:scaleType="matrix"
+       android:src="@drawable/rave_inappp"
+       app:BorderColor="@color/white"
+       app:BorderWidth="2dp"
+       app:borderCorner="2dp" />
+
+ <!--dev.vision.rave.views.HexagonMaskView
+     android:id="@+id/circularImageView"
+     android:layout_width="fill_parent"
+     android:layout_height="fill_parent"
+     android:layout_above="@+id/TextView01"
+     android:layout_centerHorizontal="true"
+     android:layout_margin="5dp"
+     android:scaleType="fitCenter"
+     android:src="@drawable/default_person" /-->
+
+</RelativeLayout>

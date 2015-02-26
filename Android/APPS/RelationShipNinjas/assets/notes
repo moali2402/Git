@@ -1,0 +1,132 @@
+Changes as following :
+
+1-MenuFragment
+2-Main_Activity
+3-RelationFragment
+4-Dashboard_Fragment
+
+
+
+-MenuFragment :
+
+
+	@Override
+	public void onActivityCreated(Bundle savedInstanceState) {
+		super.onActivityCreated(savedInstanceState);
+        expListView = (ExpandableListView) v.findViewById(R.id.expandableListView1);
+ 		
+        expListView.setOnGroupClickListener(this);
+       
+         
+        expListView.setOnChildClickListener(this);
+        listAdapter = new ExpandableListAdapter(getActivity(), Static.rs);
+        expListView.setAdapter(listAdapter);
+        
+        if(Static.rs!= null && !Static.rs.isEmpty()){
+			
+		}else{
+	       new Dashboard_Relationship_AsyncGetAll().execute();
+		}
+		
+	}
+	
+	
+	Dashboard AsyncTask
+	
+	@Override
+	public void onPostExecute(Boolean result){
+		super.onPostExecute(result);
+		/*		
+		if(result.booleanValue()){
+			listAdapter = new ExpandableListAdapter(getActivity(), Static.rs);
+		}else{
+			listAdapter = new ExpandableListAdapter(getActivity(), new Relationships());
+		}
+        expListView.setAdapter(listAdapter);
+		 */
+		if(result.booleanValue())			 
+		refresh();
+			
+        if(pd.isShowing())
+			pd.dismiss();
+        
+        if(!done){
+        	for(Relationship r : Static.rs){
+        		for(Event e : r.getEvents()){
+        			AddAlarm alarm = new AddAlarm();
+					alarm.create(getActivity(), e, true);
+        		}
+        	}
+			done= true;
+		}
+	}
+		
+		
+	
+-Main_Activity		
+
+		OnCreate(){
+		    ......
+		    ......
+		    menu.setFitsSystemWindows(true);
+	        menu.setBackgroundColor(Color.parseColor("#ff8380"));
+	        
+	        final MenuFragment m = new MenuFragment();
+	        getSupportFragmentManager()
+			.beginTransaction()
+			.replace(R.id.menu_frame, m)
+			.commit();	
+	        
+	
+	        ChangeFragments();
+	
+	        Static.rs.setOnDataChangeListener(new DataChangeListener() {
+				
+				@Override
+				public void refresh() {
+					m.refresh();
+				}
+			});
+        
+        
+    	}
+
+
+
+
+-DashBoard Fragment
+
+		Dashboard Async
+		
+		@Override
+		public void onPostExecute(Boolean result){
+			super.onPostExecute(result);
+			if(result.booleanValue()){
+				((RelationshipsAdapter)lv.getAdapter()).notifyDataSetChanged();
+			}
+			swipeLayout.setRefreshing(false);
+	        if(pd.isShowing())
+				pd.dismiss();
+		}
+		
+		
+		
+-RelationFragment
+
+		onActivityCreated(){
+		
+		
+			Bundle b = getArguments();
+			if(b!=null){
+				pos = b.getInt("pos");
+				relation = Static.rs.get(pos);
+				show(); // cane remove this also
+		        new EVENT_RELATIONSHIP_API().execute(relation.getId()); 
+			}else{
+		        new DEFAULT_RELATIONSHIP_API().execute();
+	
+			}
+			
+	
+		}
+	

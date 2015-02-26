@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:CircularImage="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <dev.vision.rave.views.InScrollableListView
+        android:id="@android:id/list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:clipToPadding="false"
+        android:dividerHeight="1dp"
+        android:scrollbars="none" >
+
+    </dev.vision.rave.views.InScrollableListView>
+
+    <dev.vision.rave.views.RectangleRelative
+        android:id="@+id/messaging_sticky"
+        style="@style/Item.Sticky"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        CircularImage:borderWidth="0dp"
+        android:background="#000" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/footer_height" >
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:padding="5dp"
+                android:src="@drawable/_ics_ic_ab_compose" />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:padding="5dp"
+                android:src="@drawable/ic_system_notification_group" />
+
+        </LinearLayout>
+    </dev.vision.rave.views.RectangleRelative>
+
+    <RelativeLayout
+        android:id="@+id/newotification"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true" >
+    </RelativeLayout>
+
+</RelativeLayout>

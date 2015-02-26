@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+    android:fitsSystemWindows="true">
+
+ <dev.vision.rave.views.ScrollableListView
+     android:id="@android:id/list"
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:divider="@null"
+     android:scrollbars="none" />
+
+ <RelativeLayout
+     android:id="@+id/sticky"
+     android:layout_width="fill_parent"
+     android:layout_height="wrap_content"
+     android:background="@color/ProfileBack" >
+
+     <dev.vision.rave.views.BlurredImageView
+         android:id="@+id/imageView1"
+         android:layout_width="fill_parent"
+         android:layout_height="wrap_content"
+         android:layout_alignBottom="@+id/indicator"
+         android:layout_alignParentTop="true"
+         android:scaleType="centerCrop" />
+
+        <dev.vision.rave.views.Custom_viewpager
+            android:id="@+id/pager"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="10dp" />
+
+		<com.viewpagerindicator.CirclePageIndicator
+		    android:id="@+id/indicator"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/pager"
+            android:layout_alignParentLeft="true"
+            android:padding="10dip" />
+
+    </RelativeLayout>
+ 
+ <include
+     android:id="@+id/actionbar"
+     android:layout_width="fill_parent"
+     android:layout_height="50dp"
+     layout="@layout/actionbar" />
+
+</RelativeLayout>

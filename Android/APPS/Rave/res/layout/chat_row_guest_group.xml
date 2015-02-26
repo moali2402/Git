@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:CircularImage="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:gravity="left|center_vertical"
+    android:padding="5dp" >
+
+    <dev.vision.rave.views.CircularImageResizable
+        android:id="@+id/userPic"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="false"
+        CircularImage:borderWidth="0dp"
+        android:adjustViewBounds="true"
+        android:src="@drawable/bby" />
+    
+    <RelativeLayout
+        android:id="@+id/message_containner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="50dp"
+        android:layout_toRightOf="@+id/userPic"
+        android:background="@drawable/bg_msg_incoming"
+        android:gravity="center_vertical"
+        android:minHeight="45dp"
+        android:minWidth="100dp"
+        android:paddingBottom="5dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="10dp"
+        android:paddingTop="5dp" >
+        
+        <ViewStub
+		    android:id="@+id/layout_stub"
+		    android:inflatedId="@+id/message_body"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"/>
+        
+        </RelativeLayout>
+
+</RelativeLayout>

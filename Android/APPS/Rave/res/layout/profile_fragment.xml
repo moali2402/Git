@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    xmlns:app="http://schemas.android.com/apk/res/dev.vision.rave">
+
+    <RelativeLayout
+        android:id="@+id/cover_area"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/ProfileBack" >
+
+        <dev.vision.rave.views.BlurredImageView
+            android:id="@+id/coverImage"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_alignBottom="@+id/indicator"
+            android:layout_alignParentTop="true"
+            android:scaleType="centerCrop"
+            android:visibility="gone" />
+
+        <dev.vision.rave.views.Custom_viewpager
+            android:id="@+id/profile_pager"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_alignParentTop="true" >
+        </dev.vision.rave.views.Custom_viewpager>
+
+        <com.viewpagerindicator.CirclePageIndicator
+            android:id="@+id/indicator"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/profile_pager"
+            android:layout_alignParentLeft="true"
+            android:padding="10dip" />
+
+        <FrameLayout
+            android:id="@+id/camera_main_container"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_alignParentTop="true"
+            android:background="#FFFFFF"
+            android:visibility="gone" >
+
+            <ImageView
+                android:id="@+id/camera_main_hide"
+                android:layout_width="45dp"
+                android:layout_height="35dp"
+                android:layout_gravity="center_horizontal|bottom"
+                android:layout_margin="10dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/hide_e" />
+
+            <ImageView
+                android:id="@+id/camera_main_fullscreen"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="right"
+                android:layout_margin="5dp"
+                android:src="@drawable/fullscreen" />
+
+            <ImageView
+                android:id="@+id/camera_main_switch"
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:layout_gravity="left"
+                android:layout_margin="5dp"
+                android:src="@drawable/switch_cam" />
+
+            <ImageView
+                android:id="@+id/fina_pic"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="bottom"
+                android:background="#90000000"
+                android:gravity="bottom" >
+
+                <Button
+                    android:id="@+id/button1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="left"
+                    android:layout_weight="1"
+                    android:text="Button" />
+
+                <Button
+                    android:id="@+id/button2"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="right"
+                    android:layout_weight="1"
+                    android:text="Button" />
+            </LinearLayout>
+        </FrameLayout>
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/listView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+    </ListView>
+
+</LinearLayout>

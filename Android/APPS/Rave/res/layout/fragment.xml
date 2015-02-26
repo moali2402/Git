@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+  
+ <dev.vision.rave.views.ScrollableListView
+		android:id="@android:id/list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipToPadding="false"
+        android:dividerHeight="1dp"
+        android:scrollbars="none"/>
+
+ <dev.vision.rave.views.RectangleRelative
+        android:id="@+id/sticky"
+        style="@style/Item.Sticky"
+        android:layout_height="wrap_content"
+         >
+
+        <View
+            android:id="@+id/view1"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:layout_alignBottom="@+id/status"
+            android:layout_alignTop="@+id/profilePic"
+            android:alpha="0"
+            android:background="@color/ProfileBack"
+            android:visibility="visible" />
+
+        <dev.vision.rave.views.CircularImageView
+            android:id="@+id/profilePic"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_centerHorizontal="true" />
+
+        <dev.vision.rave.views.AutoResizeTextView
+            android:id="@+id/displayName"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/profilePic"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:gravity="center"
+            android:text="Keira Mcelligott"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/TextColor"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <dev.vision.rave.views.AutoResizeTextView
+            android:id="@+id/status"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/displayName"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:gravity="top|center_horizontal"
+            android:text="Status"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/TextColor"
+            android:textSize="16sp" />
+
+        <RelativeLayout
+            android:id="@+id/end"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/shadeHeight"
+            android:layout_below="@id/status"
+            android:padding="10dp"
+            android:visibility="gone" >
+
+            <dev.vision.rave.views.SquareImageView
+                android:id="@+id/range"
+                android:layout_width="@dimen/shadeHeight"
+                android:layout_height="@dimen/shadeHeight"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:src="@drawable/sicoon" />
+
+            <dev.vision.rave.views.SquareImageView
+                android:id="@+id/listt"
+                android:layout_width="@dimen/shadeHeight"
+                android:layout_height="@dimen/shadeHeight"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:src="@drawable/list" />
+
+            <dev.vision.rave.views.SquareImageView
+                android:id="@+id/gridd"
+                android:layout_width="@dimen/shadeHeight"
+                android:layout_height="@dimen/shadeHeight"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginRight="10dp"
+                android:layout_toLeftOf="@+id/listt"
+                android:src="@drawable/grid" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/profilePic"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="@dimen/shadeHeight"
+            android:layout_toRightOf="@+id/profilePic"
+            android:orientation="vertical"
+            android:visibility="gone" >
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:scaleType="centerInside"
+                android:src="@drawable/relationship" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout1"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:visibility="gone" >
+
+                <dev.vision.rave.views.AutoResizeTextView
+                    android:id="@+id/followersNo"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="225"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@color/TextColor"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <dev.vision.rave.views.AutoResizeTextView
+                    android:id="@+id/TextView04"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_below="@+id/TextView05"
+                    android:layout_weight="1"
+                    android:gravity="left|center_vertical"
+                    android:text="FOLLOWING"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@color/TextColor"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/LinearLayout01"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal" >
+
+                <dev.vision.rave.views.AutoResizeTextView
+                    android:id="@+id/followingNo"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="225"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@color/TextColor"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <dev.vision.rave.views.AutoResizeTextView
+                    android:id="@+id/AutoResizeTextView01"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_below="@+id/TextView05"
+                    android:layout_weight="1"
+                    android:gravity="left|center_vertical"
+                    android:text="FOLLOWING"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@color/TextColor"
+                    android:textSize="16sp"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/displayName"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="@dimen/shadeHeight"
+            android:layout_toLeftOf="@+id/profilePic"
+            android:orientation="vertical"
+            android:visibility="gone" >
+
+            <ImageView
+                android:id="@+id/ImageView01"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_action_pictue" />
+            
+            <LinearLayout
+                android:id="@+id/LinearLayout02"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal" >
+
+                <dev.vision.rave.views.AutoResizeTextView
+                    android:id="@+id/AutoResizeTextView02"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="225"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@color/TextColor"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <dev.vision.rave.views.AutoResizeTextView
+                    android:id="@+id/AutoResizeTextView05"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_below="@+id/TextView05"
+                    android:layout_weight="1"
+                    android:gravity="left|center_vertical"
+                    android:text="FOLLOWING"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@color/TextColor"
+                    android:textSize="16sp"
+                    android:visibility="gone" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </dev.vision.rave.views.RectangleRelative>
+ 
+ <include
+     android:id="@+id/actionbar"
+     android:layout_width="fill_parent"
+     android:layout_height="50dp"
+     layout="@layout/actionbar" />
+
+</RelativeLayout>

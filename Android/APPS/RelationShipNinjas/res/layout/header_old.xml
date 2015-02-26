@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/all"
+    
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true">
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_alignBottom="@+id/placeholder"
+            android:scaleType="centerCrop"
+            android:src="@drawable/pop"
+            android:translationY="60dp" />
+
+        <dev.vision.relationshipninjas.views.Custom_viewpager
+            android:id="@+id/pager"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/bacl" />
+
+        <com.viewpagerindicator.CirclePageIndicator
+            android:id="@+id/indicator"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/pager"
+            android:layout_alignParentLeft="true"
+            android:padding="10dip" />
+
+        <RelativeLayout
+            android:id="@+id/placeholder"
+            android:layout_width="fill_parent"
+            android:layout_height="110dp"
+            android:layout_below="@+id/pager">
+
+        </RelativeLayout>
+</RelativeLayout>

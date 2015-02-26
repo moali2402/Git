@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <!-- Define the progress properties like start color, end color etc -->
+  <item android:id="@android:id/progress">
+    <clip>
+        <shape>
+            <gradient
+                android:startColor="#019fde"
+                android:centerColor="#019fde"
+                android:centerY="1.0"
+                android:endColor="#019fde"
+                android:angle="270"
+            />
+        </shape>
+    </clip>
+    </item>
+    
+      <!-- Define the background properties like color etc -->
+    <item>
+        <inset android:drawable="@drawable/ic_action_pictue" />
+   </item>
+</layer-list> 

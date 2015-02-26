@@ -1,0 +1,526 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:id="@+id/first"
+            android:layout_width="600dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.85" >
+
+            <TextView
+                android:id="@+id/TextView01"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.19"
+                android:ems="10"
+                android:text="Title" />
+
+            <TextView
+                android:id="@+id/TextView09"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:text="First Name" />
+
+            <TextView
+                android:id="@+id/TextView13"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:text="Middle Name" />
+
+            <TextView
+                android:id="@+id/TextView07"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.04"
+                android:ems="10"
+                android:text="Surname" />
+
+            <TextView
+                android:id="@+id/TextView11"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:text="Phone Number" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/first_e"
+            android:layout_width="600dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/first"
+            android:layout_marginTop="5dp"
+            android:layout_weight="0.85" >
+
+            <EditText
+                android:id="@+id/Quote_Title"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1.17"
+                android:background="@drawable/clicked"
+                android:ems="10"
+                android:hint="Title"
+                android:inputType="textCapSentences"
+                android:nextFocusDown="@+id/Quote_First_name"
+                android:padding="10dp" >
+
+                <requestFocus />
+            </EditText>
+
+            <EditText
+                android:id="@+id/Quote_First_name"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/clicked"
+                android:ems="10"
+                android:hint="First Name"
+                android:inputType="textCapWords"
+                android:nextFocusDown="@+id/Quote_Middle_Name"
+                android:padding="10dp" />
+
+            <EditText
+                android:id="@+id/Quote_Middle_Name"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/clicked"
+                android:ems="10"
+                android:hint="Middle Name"
+                android:inputType="textCapWords"
+                android:nextFocusDown="@+id/Quote_surname"
+                android:padding="10dp" />
+
+            <EditText
+                android:id="@+id/Quote_surname"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.04"
+                android:background="@drawable/clicked"
+                android:ems="10"
+                android:hint="Surname"
+                android:inputType="textCapWords"
+                android:nextFocusDown="@+id/Quote_tel"
+                android:padding="10dp" />
+
+            <EditText
+                android:id="@+id/Quote_tel"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/clicked"
+                android:ellipsize="end"
+                android:ems="10"
+                android:hint="Phone"
+                android:inputType="phone"
+                android:lines="1"
+                android:maxLength="10"
+                android:maxLines="1"
+                android:nextFocusDown="@+id/Quote_address"
+                android:padding="10dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/second"
+            android:layout_width="600dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/first_e"
+            android:layout_marginTop="5dp"
+            android:layout_weight="0.85" >
+
+            <TextView
+                android:id="@+id/TextView14"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight=".65"
+                android:ems="10"
+                android:text="Address" />
+
+            <TextView
+                android:id="@+id/TextView10"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.04"
+                android:ems="10"
+                android:text="Suburb" />
+
+            <TextView
+                android:id="@+id/TextView12"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:text="State" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/second_e"
+            android:layout_width="600dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/second"
+            android:layout_marginBottom="110dp"
+            android:layout_marginTop="5dp"
+            android:layout_weight="0.85" >
+
+            <EditText
+                android:id="@+id/Quote_address"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight=".65"
+                android:background="@drawable/clicked"
+                android:ems="10"
+                android:hint="Address"
+                android:inputType="textCapWords"
+                android:nextFocusDown="@+id/Quote_suburb"
+                android:padding="10dp" />
+
+            <EditText
+                android:id="@+id/Quote_suburb"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.04"
+                android:background="@drawable/clicked"
+                android:ems="10"
+                android:hint="Suburb"
+                android:inputType="textCapWords"
+                android:nextFocusDown="@+id/Quote_state"
+                android:padding="10dp" />
+
+            <EditText
+                android:id="@+id/Quote_state"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/clicked"
+                android:ems="10"
+                android:hint="State"
+                android:imeOptions="actionDone"
+                android:inputType="textCapCharacters"
+                android:padding="10dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/second_e"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/EditText12"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_weight="0.85"
+                android:ems="10"
+                android:text="Items"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/EditText08"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_weight="1"
+                android:ems="10"
+                android:text="Price"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/EditText07"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_weight="1.04"
+                android:ems="10"
+                android:text="Disc %"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/EditText14"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:gravity="center"
+                android:text="6 months\n26 weeks"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/EditText13"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:gravity="center"
+                android:text="1 year\n52 weeks"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/EditText11"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:gravity="center"
+                android:text="18 months\n78 weeks"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/EditText10"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:gravity="center"
+                android:text="2 years\n 104 weeks"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/EditText09"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:gravity="center"
+                android:text="3 years\n156 weeks"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="32dp"
+                android:layout_height="fill_parent"
+                android:layout_marginLeft="5dp"
+                android:src="@drawable/abc_ic_clear_normal"
+                android:visibility="invisible" />
+        </LinearLayout>
+
+        <ListView
+            android:id="@+id/listView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/linearLayout2"
+            android:layout_marginTop="5dp"
+            android:divider="@android:color/transparent"
+            android:dividerHeight="4dp" >
+        </ListView>
+
+        <LinearLayout
+            android:id="@+id/linearLayout1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/listView1"
+            android:layout_marginRight="37dp"
+            android:layout_marginTop="4dp" >
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="0.845"
+                android:gravity="center_vertical|right"
+                android:padding="10dp"
+                android:text="Total Price" />
+
+            <TextView
+                android:id="@+id/t_price"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:background="@drawable/clicked"
+                android:drawableLeft="@drawable/dollar"
+                android:ems="10"
+                android:gravity="center_vertical"
+                android:padding="10dp"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1.04"
+                android:padding="10dp"
+                android:text="WkTotal" />
+
+            <TextView
+                android:id="@+id/wkTotal1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/clicked"
+                android:drawableLeft="@drawable/dollar"
+                android:ems="10"
+                android:gravity="center_vertical"
+                android:padding="10dp"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/wkTotal2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/clicked"
+                android:drawableLeft="@drawable/dollar"
+                android:ems="10"
+                android:gravity="center_vertical"
+                android:padding="10dp"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/wkTotal3"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/clicked"
+                android:drawableLeft="@drawable/dollar"
+                android:ems="10"
+                android:gravity="center_vertical"
+                android:padding="10dp"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/wkTotal4"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/clicked"
+                android:drawableLeft="@drawable/dollar"
+                android:ems="10"
+                android:gravity="center_vertical"
+                android:padding="10dp"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/wkTotal5"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/clicked"
+                android:drawableLeft="@drawable/dollar"
+                android:ems="10"
+                android:gravity="center_vertical"
+                android:padding="10dp"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout3"
+            android:layout_width="574dp"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@+id/linearLayout1"
+            android:layout_below="@+id/linearLayout1"
+            android:layout_marginTop="5dp" >
+
+            <TextView
+                android:id="@+id/Total1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/yellow"
+                android:drawableLeft="@drawable/dollar"
+                android:ems="10"
+                android:gravity="center_vertical"
+                android:padding="10dp"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/Total2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/yellow"
+                android:drawableLeft="@drawable/dollar"
+                android:ems="10"
+                android:gravity="center_vertical"
+                android:padding="10dp"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/Total3"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/yellow"
+                android:drawableLeft="@drawable/dollar"
+                android:ems="10"
+                android:gravity="center_vertical"
+                android:padding="10dp"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/Total4"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/yellow"
+                android:drawableLeft="@drawable/dollar"
+                android:ellipsize="end"
+                android:ems="10"
+                android:gravity="center_vertical"
+                android:padding="10dp"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/Total5"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/yellow"
+                android:drawableLeft="@drawable/dollar"
+                android:ems="10"
+                android:gravity="center_vertical"
+                android:padding="10dp"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/EditText06"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/linearLayout3"
+            android:layout_alignTop="@+id/linearLayout3"
+            android:layout_toLeftOf="@+id/linearLayout3"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="Contract Total"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:id="@+id/LinearLayout01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/linearLayout2"
+            android:layout_alignParentLeft="true"
+            android:layout_marginBottom="40dp"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp"
+                android:text="Terms"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <Spinner
+                android:id="@+id/terms"
+                android:layout_width="150dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:background="@drawable/buttondropdown"
+                android:entries="@array/terms"
+                android:paddingBottom="5dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="20dp"
+                android:paddingTop="5dp" />
+        </LinearLayout>
+    </RelativeLayout>

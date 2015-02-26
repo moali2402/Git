@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">GitHub-ItWorx</string>
+    <string name="title_repository_detail">Repository Detail</string>
+    <string name="repository_url">"Repository URL : "</string>
+    <string name="github_logo">GitHub Logo</string>
+    <string name="owner_avatar_image">Owner Avatar Image</string>
+    
+    
+</resources>

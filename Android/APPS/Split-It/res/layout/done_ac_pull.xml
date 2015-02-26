@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/background_img"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginTop="-100dp"
+        android:contentDescription="@null" >
+        
+        <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@null"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bgconsumers" />
+
+        
+
+        <RatingBar
+            android:id="@+id/ratingBar1"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_above="@+id/textView1"
+            android:layout_alignParentLeft="true"
+            android:minHeight="40dp"
+            android:numStars="5" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/ratingBar1"
+            android:layout_alignParentLeft="true"
+            android:paddingLeft="5dp"
+            android:shadowColor="@android:color/black"
+            android:shadowDx="3.0"
+            android:shadowDy="3.0"
+            android:shadowRadius="5.0"
+            android:singleLine="true"
+            android:text="Nandos"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@android:color/background_light"
+            android:textSize="32sp" />
+        
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/gradient"
+            android:gravity="center_vertical"
+            android:paddingLeft="5dp"
+            android:text="Medium Text"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@android:color/background_dark" />
+        
+        </RelativeLayout>
+
+    <dev.vision.split.it.extras.PullScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="150dp"
+        android:fillViewport="true"
+        app:headerHeight="300dp"
+        app:headerVisibleHeight="150dp" >
+
+        <RelativeLayout
+            android:id="@+id/RelativeLayout1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+            
+            
+            <LinearLayout
+                android:id="@+id/LinearLayout1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/scroll_view_head"
+                android:layout_marginTop="-1dp"
+                android:background="#F7F4F0"
+                android:orientation="vertical"
+                android:paddingBottom="8dp" >
+
+                <ListView
+                    android:id="@+id/table_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="600dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginTop="5dp" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/scroll_view_head"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:background="@android:color/white"
+                android:orientation="vertical"
+                android:padding="10dp" >
+
+                <TextView
+                    android:id="@+id/user_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:ellipsize="end"
+                    android:shadowColor="@android:color/black"
+                    android:shadowDx="3.0"
+                    android:shadowDy="3.0"
+                    android:shadowRadius="5.0"
+                    android:singleLine="true"
+                    android:text="Open Tables"
+                    android:textColor="@android:color/black"
+                    android:textSize="26sp" />
+
+                <FrameLayout
+                    android:id="@+id/user_divider_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/user_name"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="5dp" >
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="1px"
+                        android:layout_gravity="bottom"
+                        android:background="#DFDFDF"
+                        android:contentDescription="@null" />
+
+                    <ImageView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@null"
+                        android:src="@drawable/arrow_up" />
+
+                </FrameLayout>
+
+            </RelativeLayout>
+
+            
+        </RelativeLayout>
+    </dev.vision.split.it.extras.PullScrollView>
+
+</RelativeLayout>

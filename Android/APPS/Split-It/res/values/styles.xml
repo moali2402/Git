@@ -1,0 +1,47 @@
+<resources>
+
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    -->
+    <style name="AppBaseTheme" parent="Theme.AppCompat.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+
+    <!-- Application theme. -->
+   <style name="AppTheme" parent="AppBaseTheme">
+        <item name="hlv_listViewStyle">@style/HListView</item>
+        <item name="hlv_absHListViewStyle">@style/AbsHListView</item>
+        <item name="hlv_listPreferredItemWidth">64dip</item>
+		<item name="android:windowBackground">@android:color/background_dark</item>
+        <item name="android:windowIsTranslucent">true</item>
+    	<item name="android:windowNoTitle">true</item>  
+    	<item name="android:windowContentOverlay">@null</item>
+    	
+   </style>
+
+    <style name="AbsHListView">
+        <item name="android:scrollbars">horizontal</item>
+        <item name="android:fadingEdge">horizontal</item>
+    </style>
+
+    <style name="HListView" parent="AbsHListView">
+        <item name="android:listSelector">@drawable/apptheme_list_selector_holo_light</item>
+        <item name="android:cacheColorHint">?android:attr/colorBackgroundCacheHint</item>
+        <item name="android:divider">@android:drawable/divider_horizontal_bright</item>
+        <item name="android:scrollingCache">false</item>
+        <item name="android:overScrollMode">always</item>
+        <item name="android:fastScrollEnabled">true</item>
+	    <item name="android:smoothScrollbar">false</item>
+        <item name="hlv_stackFromRight">false</item>
+        <item name="hlv_measureWithChild">0</item>
+        <item name="hlv_dividerWidth">3dip</item>
+	    <item name="hlv_headerDividersEnabled">true</item>
+	    <item name="hlv_footerDividersEnabled">true</item>
+	    <item name="hlv_transcriptMode">disabled</item>
+    </style>
+</resources>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="spinnerItems">
+        <item>Disabled</item>
+        <item>Enabled</item>
+    </string-array>
+    
+    <string-array name="terms">
+        <item>All</item>
+        <item>26 Weeks</item>
+        <item>52 weeks</item>
+        <item>78 weeks</item>
+        <item>104 weeks</item>
+        <item>156 weeks</item>
+    </string-array>
+</resources>

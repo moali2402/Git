@@ -1,0 +1,150 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fdfdfd"
+    android:padding="0dip"
+    tools:context=".LoginActivity" xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:fillViewport="false"
+        android:fitsSystemWindows="true" >
+
+        <LinearLayout
+            android:id="@+id/relativeLayout3"
+            android:layout_width="fill_parent"
+            android:layout_height="175dp"
+            android:layout_gravity="bottom"
+            android:background="#90000000"
+            android:gravity="center"
+            android:minHeight="175dp"
+            android:orientation="vertical"
+            android:paddingBottom="10dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingTop="5dp" >
+
+            <ViewFlipper
+                android:id="@+id/viewp"
+                android:layout_width="fill_parent"
+                android:layout_height="120dp"
+                android:layout_above="@+id/next"
+                android:gravity="center" >
+
+                <LinearLayout
+                    android:id="@+id/LinearLayout1"
+                    android:layout_width="match_parent"
+                    android:layout_height="fill_parent"
+                    android:gravity="center"
+                    android:orientation="vertical" >
+
+                    <Spinner
+                        android:id="@+id/spinner1"
+                        android:layout_width="fill_parent"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:gravity="center" />
+
+                    <EditText
+                        android:id="@+id/phoneNo"
+                        android:layout_width="fill_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="10dp"
+                        android:ems="10"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:hint="Enter Your Phone Number"
+                        android:inputType="number"
+                        android:padding="5dp" />
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="fill_parent"
+                    android:gravity="center" >
+
+                    <dev.vision.layback.views.PanningEditText
+                        android:id="@+id/verification_code"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/back"
+                        android:gravity="center"
+                        android:hint="Enter Verification Code"
+                        android:imeOptions="flagNoExtractUi"
+                        android:inputType="number"
+                        android:maxLength="6"
+                        android:padding="5dp" />
+
+                    <Button
+                        android:id="@+id/verify"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_below="@+id/verification_code"
+                        android:layout_centerHorizontal="true"
+                        android:text="VERIFY"
+                        android:textColor="#FFFFFF"
+                        android:visibility="gone" />
+                </RelativeLayout>
+            </ViewFlipper>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp" >
+
+                <dev.vision.layback.views.RoundImage
+                    android:id="@+id/ImageView03"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_alignBottom="@id/next"
+                    android:layout_alignLeft="@id/next"
+                    android:layout_alignRight="@id/next"
+                    android:layout_alignTop="@id/next"
+                    android:src="@drawable/_ics_ic_in_call_answer_activated" />
+
+                <com.dd.processbutton.iml.ActionProcessButton
+                    android:id="@+id/next"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:text="NEXT"
+                    android:textColor="@android:color/white"
+                    app:colorComplete="@android:color/transparent"
+                    app:colorNormal="@android:color/transparent"
+                    app:colorPressed="@android:color/transparent"
+                    app:colorProgress="@color/purple_progress"
+                    app:textComplete="Success"
+                    app:textProgress="Waiting for SMS" />
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/dominosw" />
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/imageView3"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="false"
+        android:layout_marginBottom="20dp"
+        android:adjustViewBounds="true"
+        android:padding="30dp"
+        android:src="@drawable/layback_ab" />
+
+</RelativeLayout>

@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#ffffff"
+    android:fitsSystemWindows="true" >
+
+    <dev.vision.relationshipninjas.views.InScrollableListView
+        android:id="@android:id/list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:divider="@null" />
+
+    <RelativeLayout
+        android:id="@+id/sticky"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true" >
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/indicator"
+            android:layout_marginBottom="-110dp"
+            android:paddingBottom="5dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/pop"
+            android:translationY="0dp" />
+
+        <dev.vision.relationshipninjas.views.Custom_viewpager
+            android:id="@+id/pager"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true" />
+
+        <com.viewpagerindicator.CirclePageIndicator
+            android:id="@+id/indicator"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/pager"
+            android:layout_alignParentLeft="true"
+            android:padding="10dip" />
+
+        <LinearLayout
+            android:id="@+id/booot"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_alignBottom="@+id/imageView1"
+            android:layout_marginTop="45dp"
+            android:gravity="bottom"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:id="@+id/linearLayout1"
+                android:layout_width="fill_parent"
+                android:layout_height="60dp"
+                android:background="#FFFFFF"
+                android:divider="@drawable/ofback"
+                android:dividerPadding="10dp"
+                android:orientation="horizontal"
+                android:showDividers="middle" >
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:gravity="center" >
+
+                    <TextView
+                        android:id="@+id/textView1"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_above="@+id/textView2"
+                        android:gravity="center"
+                        android:text="401"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:gravity="center"
+                        android:text="Days Together"
+                        android:textSize="12sp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:gravity="center" >
+
+                    <TextView
+                        android:id="@+id/TextView02"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_above="@+id/TextView01"
+                        android:gravity="center"
+                        android:text="54"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/TextView01"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:gravity="center"
+                        android:text="Gift Since"
+                        android:textSize="12sp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:gravity="center" >
+
+                    <TextView
+                        android:id="@+id/TextView04"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_above="@+id/TextView03"
+                        android:gravity="center"
+                        android:text="912"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/TextView03"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:gravity="center"
+                        android:text="Message Sent"
+                        android:textSize="12sp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/nextevent"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:gravity="center" >
+
+                    <TextView
+                        android:id="@+id/eventTxt"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_below="@+id/llll"
+                        android:layout_marginTop="-3dp"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:maxLines="1"
+                        android:text="until her b-day"
+                        android:textSize="12sp" />
+
+                    <LinearLayout
+                        android:id="@+id/llll"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="-3dp"
+                        android:gravity="center" >
+
+                        <TextView
+                            android:id="@+id/number"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="64"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textColor="#ff6e6b"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/unit"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="2dp"
+                            android:gravity="center_vertical"
+                            android:text="Days"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+                </RelativeLayout>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/bot"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-5dp" >
+
+                <TextView
+                    android:id="@+id/taphere"
+                    android:layout_width="fill_parent"
+                    android:layout_height="50dp"
+                    android:layout_alignParentBottom="false"
+                    android:layout_marginLeft="110dp"
+                    android:gravity="center"
+                    android:maxLines="2"
+                    android:padding="5dp"
+                    android:text="Tap here to let us help you select the perfet gift and message"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="#FFFFFF"
+                    android:textSize="14sp" />
+
+                <LinearLayout
+                    android:id="@+id/holder_tap"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="30dp"
+                    android:visibility="gone" >
+
+                    <TextView
+                        android:id="@+id/textView5"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#90000000"
+                        android:gravity="center"
+                        android:maxLines="1"
+                        android:padding="5dp"
+                        android:text="Manage special ocassions"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textColor="#FFFFFF"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/TextView06"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginTop="10dp"
+                        android:background="#90000000"
+                        android:gravity="center"
+                        android:maxLines="1"
+                        android:padding="5dp"
+                        android:text="Offer her a sweet gift"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textColor="#FFFFFF"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/TextView07"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#90000000"
+                        android:gravity="center"
+                        android:maxLines="1"
+                        android:padding="5dp"
+                        android:text="Send her a sweet message"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textColor="#FFFFFF"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="135dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="-5dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/logore" />
+
+            </RelativeLayout>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/actionBar"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:alpha="0"
+        android:background="#ff8380"
+        android:orientation="horizontal"
+        android:padding="5dp" >
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="20dp"
+            android:layout_height="fill_parent"
+            android:src="@drawable/abc_ic_ab_back_holo_dark" />
+
+        <TextView
+            android:id="@+id/actionTxt"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_toLeftOf="@+id/action_image"
+            android:layout_toRightOf="@+id/imageView3"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Your Fiance, Emily R."
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp" />
+
+        <dev.vision.relationshipninjas.views.CircularImage
+            android:id="@+id/action_image"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/abc_ab_stacked_solid_dark_holo" />
+      
+    </RelativeLayout>
+    
+</RelativeLayout>

@@ -1,0 +1,39 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="5dp"
+    tools:context=".MakeCallActivity" >
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/abc_ab_bottom_solid_light_holo"
+        android:visibility="gone" />
+
+    <dev.vision.layback.views.HexContactStatusIcon
+        android:id="@+id/contactIcon"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/default_person" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/contactIcon"
+        android:layout_alignTop="@+id/contactIcon"
+        android:layout_toRightOf="@+id/contactIcon"
+        android:gravity="center_vertical"
+        android:text="Demo"
+        android:textSize="20sp" />
+
+</RelativeLayout>

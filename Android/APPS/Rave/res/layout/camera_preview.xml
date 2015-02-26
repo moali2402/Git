@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/FrameLayout1"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <dev.vision.rave.camera.FixedAspectRatioFrameLayout
+        android:id="@+id/fl"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:background="@color/TextColor" >
+
+		<FrameLayout 
+		    android:id="@+id/containner"
+		    android:layout_width="fill_parent"
+		    android:layout_height="fill_parent" >
+		        <ImageView
+		            android:id="@+id/back"
+		            android:layout_width="fill_parent"
+		            android:layout_height="fill_parent"
+		            android:scaleType="fitXY" />
+	    </FrameLayout>
+    </dev.vision.rave.camera.FixedAspectRatioFrameLayout>
+
+    <dev.vision.rave.camera.FixedAspectRatioFrameLayout
+        android:id="@+id/fl2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="bottom"
+        android:layout_marginTop="-1dp"
+        android:background="@color/TextColor" >
+		
+		<FrameLayout 
+		    android:id="@+id/containner"
+		    android:layout_width="fill_parent"
+		    android:layout_height="fill_parent" >
+		       
+		    <ImageView
+	            android:id="@+id/front"
+	            android:layout_width="fill_parent"
+	            android:layout_height="fill_parent"
+	            android:scaleType="fitXY" />
+    
+   	    </FrameLayout>
+     
+    </dev.vision.rave.camera.FixedAspectRatioFrameLayout>
+
+    <View
+        android:id="@+id/view1"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_gravity="right"
+        android:layout_marginLeft="137dp" />
+
+    <Button
+        android:id="@+id/next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Button" />
+
+</FrameLayout>

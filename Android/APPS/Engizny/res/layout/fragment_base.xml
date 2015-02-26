@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/RelativeLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/box_text"
+        android:paddingBottom="5dp"
+        android:paddingRight="5dp"
+        android:paddingTop="5dp" >
+        
+        <ImageView
+            android:id="@+id/ImageView01"
+            android:layout_width="15dp"
+            android:layout_height="fill_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:adjustViewBounds="true"
+            android:paddingBottom="5dp"
+            android:paddingRight="5dp"
+            android:paddingTop="5dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/menu" />
+
+        <ImageView
+            android:id="@+id/menu"
+            android:layout_width="45dp"
+            android:layout_height="fill_parent"
+            android:layout_alignBottom="@+id/EditText1"
+            android:layout_alignTop="@+id/EditText1"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="5dp"
+            android:paddingLeft="10dp" />
+
+        <EditText
+            android:id="@+id/EditText1"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginBottom="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@+id/menu"
+            android:background="@drawable/spinner_frame"
+            android:ellipsize="end"
+            android:hint="Search"
+            android:inputType="text"
+            android:lines="1"
+            android:maxLines="1"
+            android:paddingLeft="5dp"
+            android:paddingRight="40dp" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginBottom="5dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:adjustViewBounds="true"
+            android:padding="5dp"
+            android:src="@drawable/search" />
+
+        
+
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/listView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/RelativeLayout2" >
+
+    </ListView>
+
+</RelativeLayout>

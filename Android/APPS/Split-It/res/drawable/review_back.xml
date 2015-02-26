@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+   <item android:left="40px" android:bottom="20px" android:top="20px" android:right="40px" android:drawable="@android:color/black"/>
+</layer-list>

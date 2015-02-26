@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res/dev.vision.rave"
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <dev.vision.rave.views.FirstName_Cap
+        android:id="@+id/userName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/TextView01"
+        android:layout_centerHorizontal="true"
+        android:text="Name"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@android:color/background_light" 
+        app:cap="true"
+        app:invert="true"/>
+   
+    <dev.vision.rave.views.FirstName_Cap
+        android:id="@+id/TextView01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/linearLayout1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="5dp"
+        android:textSize="16sp"
+        android:text="status"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@android:color/background_light"
+        app:invert="true" />
+
+    <!-- dev.vision.rave.views.CircularImageView
+        android:id="@+id/circularImageView"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/userName"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="20dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ki" /-->
+        
+   <com.github.siyamed.shapeimageview.HexagonImageView
+     android:id="@+id/circularImageView"
+     android:layout_width="fill_parent"
+     android:layout_height="fill_parent"
+     android:layout_above="@+id/userName"
+     android:layout_centerHorizontal="true"
+     android:layout_margin="8dp"
+     android:scaleType="matrix"
+     app:BorderColor="@color/white"
+     app:BorderWidth="2dp"
+     app:borderCorner="8dp" />
+     
+ <LinearLayout
+     android:id="@+id/linearLayout1"
+     android:layout_width="fill_parent"
+     android:layout_height="wrap_content"
+     android:layout_alignParentBottom="true"
+     android:layout_centerHorizontal="true"
+     android:layout_marginBottom="25dp"
+     android:layout_marginLeft="10dp"
+     android:layout_marginRight="10dp"
+     android:background="@drawable/frame_text"
+     android:divider="@drawable/splitter"
+     android:orientation="horizontal"
+     android:padding="5dp"
+     android:showDividers="middle" >
+
+     <dev.vision.rave.views.FirstName_Cap
+         android:id="@+id/location"
+         android:layout_width="fill_parent"
+         android:layout_height="wrap_content"
+         android:layout_weight="1"
+         android:drawableLeft="@drawable/location"
+         android:gravity="center"
+         android:text="Location"
+         android:textColor="@android:color/background_light"
+         android:textSize="14sp"
+         app:invert="true" />
+
+     <dev.vision.rave.views.FirstName_Cap
+         android:id="@+id/followers"
+         android:layout_width="fill_parent"
+         android:layout_height="wrap_content"
+         android:layout_weight="1"
+         android:gravity="center"
+         android:text="32 followers"
+         android:textColor="@android:color/background_light"
+         android:textSize="14sp"
+         app:invert="true" />
+
+    <dev.vision.rave.views.FirstName_Cap
+        android:id="@+id/followering"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="192 following"
+        android:textColor="@android:color/background_light"
+        android:textSize="14sp"
+        app:invert="true" />
+
+</LinearLayout>
+
+ <RelativeLayout
+              android:id="@+id/container"
+     
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:layout_alignBottom="@+id/circularImageView"
+     android:layout_alignParentRight="true"
+     android:layout_alignTop="@+id/circularImageView"
+     android:layout_toRightOf="@+id/circularImageView" >
+
+     <TextView
+         android:id="@+id/TextView03"
+         android:layout_width="wrap_content"
+         android:layout_height="60dp"
+         android:layout_alignParentLeft="true"
+         android:layout_centerVertical="true"
+         android:layout_weight="1"
+         android:background="@drawable/follow_clickable"
+         android:drawableLeft="@drawable/add"
+         android:drawableRight="@drawable/ic_action_person"
+         android:gravity="center"
+         android:paddingLeft="10dp"
+         android:paddingRight="5dp"
+         android:textAppearance="?android:attr/textAppearanceLarge"
+         android:textColor="#ffffff"
+         android:textSize="16sp"
+         android:visibility="gone" />
+
+     <TextView
+         android:id="@+id/textView1"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_centerVertical="true"
+         android:background="@drawable/frame_text"
+         android:drawableLeft="@drawable/_ics_ic_ab_compose_group"
+         android:drawablePadding="5dp"
+         android:paddingBottom="2dp"
+         android:paddingLeft="10dp"
+         android:paddingRight="10dp"
+         android:paddingTop="2dp"
+         android:text="Follow"
+         android:textColor="@color/white"
+         android:textSize="14sp" />
+
+ </RelativeLayout>
+
+ <!--dev.vision.rave.views.HexagonMaskView
+     android:id="@+id/circularImageView"
+     android:layout_width="fill_parent"
+     android:layout_height="fill_parent"
+     android:layout_above="@+id/TextView01"
+     android:layout_centerHorizontal="true"
+     android:layout_margin="5dp"
+     android:scaleType="fitCenter"
+     android:src="@drawable/default_person" /-->
+
+</RelativeLayout>

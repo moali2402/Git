@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingRight="32dp" >
+
+        <EditText
+            android:id="@+id/item"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="0.85"
+            android:background="@drawable/clicked"
+            android:ems="10"
+            android:hint="Description"
+            android:lines="1"
+            android:maxLines="1"
+            android:nextFocusDown="@+id/price"
+            android:focusableInTouchMode="true"
+            android:inputType="textCapSentences"
+            android:padding="10dp" />
+
+        <EditText
+            android:id="@+id/price"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="@drawable/clicked"
+            android:drawableLeft="@drawable/dollar"
+            android:ems="10"
+            android:inputType="number|numberDecimal"
+            android:nextFocusDown="@+id/disc"
+            android:focusableInTouchMode="true"
+            android:padding="10dp"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/disc"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.04"
+            android:background="@drawable/clicked"
+            android:ems="1"
+            android:imeOptions="actionDone"
+            android:inputType="number"
+            android:maxLength="1"
+            android:padding="10dp"
+            android:focusableInTouchMode="true"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/m_6"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="@drawable/clicked"
+            android:drawableLeft="@drawable/dollar"
+            android:ems="10"
+            android:gravity="center_vertical"
+            android:padding="10dp"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/y_1"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="@drawable/clicked"
+            android:drawableLeft="@drawable/dollar"
+            android:ems="10"
+            android:gravity="center_vertical"
+            android:padding="10dp"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/m_18"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="@drawable/clicked"
+            android:drawableLeft="@drawable/dollar"
+            android:ems="10"
+            android:gravity="center_vertical"
+            android:padding="10dp"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/yr_2"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="@drawable/clicked"
+            android:drawableLeft="@drawable/dollar"
+            android:ems="10"
+            android:gravity="center_vertical"
+            android:padding="10dp"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/yr_3"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="@drawable/clicked"
+            android:drawableLeft="@drawable/dollar"
+            android:ems="10"
+            android:gravity="center_vertical"
+            android:padding="10dp"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/remove_row"
+            android:layout_width="32dp"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="5dp"
+            android:src="@drawable/remove"
+            android:visibility="gone" />
+
+</LinearLayout>

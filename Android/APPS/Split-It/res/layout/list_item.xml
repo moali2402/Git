@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res/dev.vision.split.it"
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
+    android:orientation="horizontal" >
+    
+    <com.github.siyamed.shapeimageview.HexagonImageView
+        android:id="@+id/userPic"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="5dp"
+        app:BorderColor="@android:color/black"
+        app:BorderWidth="2dp"
+        app:borderCorner="3dp"
+        app:overlay="@drawable/paidd" />
+
+    <dev.vision.split.it.extras.GillsansTextView
+        android:id="@+id/TableName"
+        android:layout_width="fill_parent"
+        android:layout_height="30dp"
+        android:layout_alignTop="@+id/userPic"
+        android:layout_marginLeft="5dp"
+        android:layout_toRightOf="@+id/userPic"
+        android:gravity="bottom"
+        android:text="MO&apos;s Table"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@android:color/white"
+        android:textStyle="bold" />
+
+    <dev.vision.split.it.extras.GillsansTextView
+        android:id="@+id/invitee"
+        android:layout_width="fill_parent"
+        android:layout_height="30dp"
+        android:layout_alignBottom="@+id/userPic"
+        android:layout_alignLeft="@+id/TableName"
+        android:layout_below="@+id/TableName"
+        android:ellipsize="end"
+        android:gravity="top"
+        android:maxLines="1"
+        android:text="MO"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@android:color/white" />
+
+</RelativeLayout>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:CircularImage="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <dev.vision.rave.views.InScrollableListView
+        android:id="@android:id/list"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/sendGuest"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/textView1"
+        android:layerType="hardware"
+        android:transcriptMode="alwaysScroll" />
+
+    <LinearLayout
+        android:id="@+id/iis"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView1"
+        android:gravity="left"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        android:visibility="visible" >
+
+        <dev.vision.rave.views.CircularImageResizable
+            android:id="@+id/copy"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            CircularImage:borderWidth="0dp"
+            android:adjustViewBounds="true" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/send"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/toSend"
+        android:layout_weight="1"
+        android:adjustViewBounds="true"
+        android:padding="5dp"
+        android:src="@drawable/send" />
+
+    <EditText
+        android:id="@+id/toSend"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/listView1"
+        android:layout_toLeftOf="@+id/send"
+        android:layout_toRightOf="@+id/sendGuest"
+        android:ems="10"
+        android:imeOptions="flagNoExtractUi"
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/sendGuest"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_weight="1"
+        android:text="Button" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="fill_parent"
+        android:layout_height="45dp"
+        android:background="@color/ProfileBack"
+        android:gravity="center"
+        android:text="Messaging"
+        android:textColor="@color/TextColor"
+        android:textSize="26sp" />
+
+    <View
+        android:id="@+id/view1"
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_above="@+id/send"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/grad_black" />
+
+    <View
+        android:id="@+id/View01"
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/textView1"
+        android:background="@drawable/grad_black" />
+
+</RelativeLayout>

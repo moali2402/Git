@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="apptheme_color">#6e003f</color>
+    
+    <color name="ProfileBack">#2c3e50</color>
+        <color name="blue">#ff82e0ff</color>
+
+    <color name="background_tab_pressed">#6e003f</color>
+</resources>

@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="-50dp"
+    android:fitsSystemWindows="true">
+    
+    <!--VideoView 
+        android:scrollbars="none"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="-150dp"
+        android:layout_marginRight="-150dp"
+        android:id="@+id/VideoView"/-->
+        		
+     <dev.vision.rave.motion.ParallaxImageView
+        android:id="@+id/ImageView02"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        custom:tiltSensitivity="2.5" />
+     
+     <!-- com.dev.vision.selfie.views.FullHeightImage
+        android:id="@+id/ImageView02"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:adjustViewBounds="false"
+        android:scaleType="fitXY"
+        android:src="@drawable/selfi_gr" /-->
+
+<ImageView
+            android:id="@+id/ImageView01"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:src="@drawable/transition" />
+
+<dev.vision.rave.views.HexagonMaskView
+    android:id="@+id/circularImageView"
+    android:layout_width="150dp"
+    android:layout_height="fill_parent"
+    android:layout_below="@id/back"
+    android:layout_margin="20dp"
+    android:scaleType="centerCrop" />
+
+<WebView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="100dp" />
+<ScrollView
+	        android:id="@+id/scrollView1"
+	        android:layout_width="fill_parent"
+	        android:layout_height="fill_parent"
+	        android:fillViewport="false"
+	        android:fitsSystemWindows="true" >
+	
+	        <LinearLayout
+	            android:id="@+id/relativeLayout3"
+	            android:layout_width="fill_parent"
+	            android:layout_height="175dp"
+	            android:layout_gravity="bottom"
+	            android:background="#90000000"
+	            android:gravity="center"
+	            android:minHeight="175dp"
+	            android:orientation="vertical"
+	            android:paddingBottom="10dp"
+	            android:paddingLeft="20dp"
+	            android:paddingRight="20dp"
+	            android:paddingTop="5dp" >
+	
+	                <ViewFlipper
+	                    android:id="@+id/viewp"
+	                    android:layout_width="fill_parent"
+	                    android:layout_height="120dp"
+	                    android:layout_above="@+id/next"
+	                    android:gravity="center" >
+	
+	                    <LinearLayout
+	                        android:id="@+id/LinearLayout1"
+	                        android:layout_width="match_parent"
+	                        android:layout_height="fill_parent"
+	                        android:gravity="center"
+	                        android:orientation="vertical" >
+
+	                        <Spinner
+	                            android:id="@+id/spinner1"
+	                            android:layout_width="fill_parent"
+	                            android:layout_height="40dp"
+	                            android:layout_gravity="center"
+	                            android:background="@drawable/back"
+	                            android:gravity="center" />
+	
+	                        <EditText
+	                            android:id="@+id/phoneNo"
+	                            android:layout_width="fill_parent"
+	                            android:layout_height="40dp"
+	                            android:layout_marginTop="10dp"
+	                            android:background="@drawable/back"
+	                            android:ems="10"
+	                            android:gravity="center_vertical|center_horizontal"
+	                            android:hint="Enter Your Phone Number"
+	                            android:inputType="number"
+	                            android:padding="5dp" />
+
+	                    </LinearLayout>
+	
+	                    <RelativeLayout
+	                        android:layout_width="match_parent"
+	                        android:layout_height="fill_parent"
+	                        android:gravity="center" >
+	
+	                        <dev.vision.rave.views.PanningEditText  
+	                            android:id="@+id/verification_code"
+	                            android:layout_width="wrap_content"
+	                            android:layout_height="40dp"
+	                            android:layout_alignParentLeft="true"
+	                            android:layout_alignParentTop="true"
+	                            android:layout_margin="10dp"
+	                            android:background="@drawable/back"
+	                            android:gravity="center"
+	                            android:hint="Enter Verification Code"
+	                            android:imeOptions="flagNoExtractUi"
+	                            android:inputType="number"
+	                            android:maxLength="6"
+	                            android:padding="5dp" />
+	
+	                        <Button
+	                            android:id="@+id/verify"
+	                            android:layout_width="wrap_content"
+	                            android:layout_height="40dp"
+	                            android:layout_below="@+id/verification_code"
+	                            android:layout_centerHorizontal="true"
+	                            android:text="VERIFY"
+	                            android:textColor="#FFFFFF"
+	                            android:visibility="gone" />
+	                    </RelativeLayout>
+
+	                    <ImageView
+	                        android:id="@+id/imageView1"
+	                        android:layout_width="fill_parent"
+	                        android:layout_height="fill_parent"
+	                        android:layout_margin="5dp"
+	                        android:src="@drawable/verifiedd" />
+
+	                </ViewFlipper>
+
+	                <RelativeLayout
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:layout_marginTop="5dp" >
+
+	                    <dev.vision.rave.views.RoundImage
+	                        android:id="@+id/ImageView03"
+	                        android:layout_width="fill_parent"
+	                        android:layout_height="fill_parent"
+	                        android:layout_alignBottom="@id/next"
+	                        android:layout_alignLeft="@id/next"
+	                        android:layout_alignRight="@id/next"
+	                        android:layout_alignTop="@id/next"
+	                        android:src="@drawable/transition" />
+
+	                    <com.dd.processbutton.iml.ActionProcessButton
+	                        android:id="@+id/next"
+	                        android:layout_width="wrap_content"
+	                        android:layout_height="40dp"
+	                        android:text="NEXT"
+	                        android:textColor="@android:color/white"
+	                        custom:colorComplete="@android:color/transparent"
+	                        custom:colorNormal="@android:color/transparent"
+	                        custom:colorPressed="@android:color/transparent"
+	                        custom:colorProgress="@color/purple_progress"
+	                        custom:textComplete="Success"
+	                        custom:textProgress="Waiting for SMS" />
+
+	                </RelativeLayout>
+	                <!--
+	                    custom:colorComplete="@color/green_complete"
+	                    custom:colorNormal="@android:color/transparent"
+	                    custom:colorPressed="@color/ProfileBack"-->
+	
+	        </LinearLayout>
+	 	</ScrollView>
+</RelativeLayout>	

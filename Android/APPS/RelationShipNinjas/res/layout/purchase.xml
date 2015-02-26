@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:CircularImage="http://schemas.android.com/apk/res/dev.vision.relationshipninjas" >
+    
+    <dev.vision.relationshipninjas.views.UnderLinedLinear
+        android:id="@+id/underlinedtab"
+        android:layout_width="fill_parent"
+        android:layout_height="90dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/actionBar"
+        android:background="#FFFFFF"
+        android:divider="@drawable/arro"
+        android:orientation="horizontal"
+        android:showDividers="middle" >
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:layout_weight="1" >
+
+            <ImageView
+                android:id="@+id/ImageView04"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/cart" />
+
+            <TextView
+                android:id="@+id/TextView04"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/ImageView04"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text="Gift"
+                android:textColor="@android:color/black"
+                android:textSize="11sp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <dev.vision.relationshipninjas.views.CircularImage
+                android:id="@+id/ImageView02"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center_horizontal"
+                CircularImage:circular="false"
+                android:src="@drawable/delivery" />
+
+            <TextView
+                android:id="@+id/TextView02"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text="Delivery"
+                android:textColor="@android:color/black"
+                android:textSize="11sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:layout_weight="1" >
+
+            <ImageView
+                android:id="@+id/ImageView01"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/shippingdate_icon" />
+
+            <TextView
+                android:id="@+id/TextView01"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_below="@+id/ImageView01"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:text="Shipping Date"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="11sp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:layout_weight="1" >
+
+            <ImageView
+                android:id="@+id/ImageView03"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/confirmation_icon" />
+
+            <TextView
+                android:id="@+id/TextView03"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_below="@+id/ImageView03"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:text="Confirmation"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="11sp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+    </dev.vision.relationshipninjas.views.UnderLinedLinear>
+     
+    <android.support.v4.view.ViewPager
+        android:id="@+id/pagerr"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/underlinedtab" >
+    </android.support.v4.view.ViewPager>
+
+    <LinearLayout
+        android:id="@+id/actionBar"
+        android:layout_width="fill_parent"
+        android:layout_height="45dp"
+        android:background="#ff8380"
+        android:orientation="horizontal"
+        android:padding="5dp" >
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            android:layout_marginLeft="30dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <dev.vision.relationshipninjas.views.CircularImage
+            android:id="@+id/imageView1"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:src="@drawable/abc_ab_stacked_solid_dark_holo"
+            android:visibility="invisible" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/back"
+        android:layout_width="40dp"
+        android:layout_height="fill_parent"
+        android:layout_alignBottom="@+id/actionBar"
+        android:paddingBottom="5dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="15dp"
+        android:paddingTop="5dp"
+        android:src="@drawable/backk" />
+
+</RelativeLayout>

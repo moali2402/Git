@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#002a3d" >
+
+    <ImageView
+        android:id="@+id/SquareImage01"
+        android:layout_width="fill_parent"
+        android:layout_height="150dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:background="#FFFFFF"
+        android:scaleType="centerCrop"
+        android:src="@drawable/iiim" />
+
+    <ListView
+        android:id="@+id/listView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/SquareImage01" >
+    </ListView>
+
+    <View
+        android:id="@+id/RelativeLayout2"
+        android:layout_width="fill_parent"
+        android:layout_height="45dp"
+        android:layout_alignBottom="@+id/SquareImage01"
+        android:background="#80C8C8C8" />
+  
+    <dev.vision.rave.views.CircularImageView
+        android:id="@+id/back"
+        android:layout_width="75dp"
+        android:layout_height="fill_parent"
+        android:layout_alignBottom="@+id/SquareImage01"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:src="@drawable/iiim" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/RelativeLayout2"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_toLeftOf="@+id/next"
+        android:layout_toRightOf="@+id/back"
+        android:gravity="center"
+        android:text="Keira Mcelligott"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/TextView01"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/listView1"
+        android:layout_alignLeft="@+id/textView3"
+        android:layout_below="@+id/textView3"
+        android:layout_toLeftOf="@+id/next"
+        android:gravity="top|center_horizontal"
+        android:text="Status"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#002a3d"
+        android:textSize="14sp" />
+
+    <Button
+        android:id="@+id/next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/listView1"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/RelativeLayout2"
+        android:text="F" />
+
+</RelativeLayout>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- shapes defined for Android 2.3 drawable issues -->
+    <item android:state_pressed="true" android:drawable="@drawable/followed" />
+
+    <item android:state_selected="true" android:drawable="@drawable/followed" />
+    
+    <!-- default -->
+    <item android:drawable="@drawable/fbback" />
+
+</selector>

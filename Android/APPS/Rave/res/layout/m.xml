@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/aboveme"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentTop="false"
+    android:background="#80FFFFFF" >
+
+        <Button
+            android:id="@+id/next"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:focusable="false"
+            android:text="Like" />
+
+        <Button
+            android:id="@+id/button2"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_toRightOf="@+id/next"
+            android:focusable="false"
+            android:text="Comment" />
+
+        <TextView
+            android:id="@+id/likestxt"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="25dp"
+            android:gravity="center_vertical|right"
+            android:text="20"
+                        android:focusable="false"
+            
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#FFFFFF" />
+
+    </RelativeLayout>

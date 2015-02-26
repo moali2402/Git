@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- shapes defined for Android 2.3 drawable issues -->
+    <item android:state_activated="true" android:drawable="@drawable/feed_button_like_active" />
+
+    <item android:state_pressed="true" android:drawable="@drawable/feed_button_like_pressed" />
+    
+    <!-- default -->
+    <item android:drawable="@drawable/feed_button_like" />
+
+</selector>

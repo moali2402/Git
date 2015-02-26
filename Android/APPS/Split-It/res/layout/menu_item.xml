@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res/dev.vision.split.it"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="5dp" >
+
+    <com.makeramen.RoundedImageView
+        android:id="@+id/roundedImageView1"
+        android:layout_width="120dp"
+        android:layout_height="110dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/slide"
+        app:corner_radius="10dp" />
+
+    <dev.vision.split.it.extras.GillsansTextView
+        android:id="@+id/gillsansTextView1"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_alignBottom="@+id/roundedImageView1"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/roundedImageView1"
+        android:layout_marginLeft="-10dp"
+        android:layout_toRightOf="@+id/roundedImageView1"
+        android:background="@drawable/wwhite_frame"
+        android:paddingLeft="10dp"
+        android:text="GillsansTextView" />
+
+    <RatingBar
+        android:id="@+id/ratingBar1"
+        style="@style/RatingBarAppTheme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/roundedImageView1"
+        android:layout_marginBottom="5dp"
+        android:layout_toRightOf="@+id/roundedImageView1"
+        android:clickable="false"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:minHeight="25dp"
+        android:mirrorForRtl="false"
+        android:numStars="5"
+        android:isIndicator="true" />
+
+    <dev.vision.split.it.extras.GillsansTextView
+        android:id="@+id/gillsansTextView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/ratingBar1"
+        android:layout_alignTop="@+id/gillsansTextView1"
+        android:layout_marginTop="25dp"
+        android:text="GillsansTextView"
+        android:textSize="14sp" />
+
+    <dev.vision.split.it.extras.GillsansTextView
+        android:id="@+id/GillsansTextView01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/ratingBar1"
+        android:layout_alignRight="@+id/gillsansTextView1"
+        android:layout_alignTop="@+id/ratingBar1"
+        android:layout_marginRight="10dp"
+        android:gravity="center_vertical|right"
+        android:text="$15.00"
+        android:textSize="16sp" />
+
+    <View
+        android:id="@+id/view1"
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:layout_above="@+id/ratingBar1"
+        android:layout_alignLeft="@+id/ratingBar1"
+        android:layout_alignRight="@+id/GillsansTextView01"
+        android:layout_marginBottom="5dp"
+        android:background="@android:color/darker_gray" />
+
+</RelativeLayout>
