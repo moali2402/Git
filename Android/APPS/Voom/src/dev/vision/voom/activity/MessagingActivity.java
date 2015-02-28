@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
+
 import com.parse.FindCallback;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
@@ -24,6 +25,7 @@ import com.sinch.android.rtc.messaging.MessageDeliveryInfo;
 import com.sinch.android.rtc.messaging.MessageFailureInfo;
 import com.sinch.android.rtc.messaging.WritableMessage;
 
+import dev.vision.voom.BaseActivity;
 import dev.vision.voom.R;
 import dev.vision.voom.SinchService;
 import dev.vision.voom.adapters.MessageAdapter;
@@ -35,21 +37,21 @@ import org.apache.http.client.ResponseHandler;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.BasicResponseHandler;
 import org.apache.http.impl.client.DefaultHttpClient;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class MessagingActivity extends Activity {
+public class MessagingActivity extends BaseActivity {
 
     private String recipientId;
     private EditText messageBodyField;
     private String messageBody;
-    private SinchService.MessageServiceInterface messageService;
+    private SinchService.SinchServiceInterface messageService;
     private MessageAdapter messageAdapter;
     private ListView messagesList;
     private String currentUserId;
-    private ServiceConnection serviceConnection = new MyServiceConnection();
     private MessageClientListener messageClientListener = new MyMessageClientListener();
     private ArrayList<String> regIds;
 
@@ -58,7 +60,7 @@ public class MessagingActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.messaging);
 
-        bindService(new Intent(this, SinchService.class), serviceConnection, BIND_AUTO_CREATE);
+        bindService(new Intent(this, SinchService.class), this, BIND_AUTO_CREATE);
 
         Intent intent = getIntent();
         recipientId = intent.getStringExtra("RECIPIENT_ID");
@@ -117,21 +119,19 @@ public class MessagingActivity extends Activity {
     @Override
     public void onDestroy() {
         messageService.removeMessageClientListener(messageClientListener);
-        unbindService(serviceConnection);
+        unbindService(this);
         super.onDestroy();
     }
 
-    private class MyServiceConnection implements ServiceConnection {
-        @Override
-        public void onServiceConnected(ComponentName componentName, IBinder iBinder) {
-            messageService = (SinchService.MessageServiceInterface) iBinder;
-            messageService.addMessageClientListener(messageClientListener);
-        }
+    @Override
+    public void onServiceConnected() {
+        messageService = getSinchServiceInterface();
+        messageService.addMessageClientListener(messageClientListener);
+    }
 
-        @Override
-        public void onServiceDisconnected(ComponentName componentName) {
-            messageService = null;
-        }
+    @Override
+    public void onServiceDisconnected() {
+        messageService = null;
     }
 
     private class MyMessageClientListener implements MessageClientListener {
