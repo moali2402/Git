@@ -21,6 +21,6 @@ public class DB_Conversations extends DB{
 
     public static void onUpgrade(SQLiteDatabase database, int oldVersion,
       int newVersion) {
-    	database.execSQL("DROP TABLE IF EXISTS " + ConversationsEntry.TABLE_NAME);
+    	database.execSQL(DROP_TABLE + ConversationsEntry.TABLE_NAME);
     }	
 }

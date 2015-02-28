@@ -22,7 +22,7 @@ public class SinchService extends Service implements SinchClientListener {
     private MessageClient messageClient = null;
     private String currentUserId;
     private LocalBroadcastManager broadcaster;
-    private Intent broadcastIntent = new Intent("com.sinch.messagingtutorial.app.ListUsersActivity");
+    private Intent broadcastIntent = new Intent("dev.vision.voom.ListUsersActivity");
     private String regId;
 
     @Override

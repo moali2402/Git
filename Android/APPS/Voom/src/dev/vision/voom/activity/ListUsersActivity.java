@@ -14,17 +14,11 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
-
 import com.parse.FindCallback;
-import com.parse.ParseException;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
-
 import dev.vision.voom.R;
 import dev.vision.voom.SinchService;
-import dev.vision.voom.R.id;
-import dev.vision.voom.R.layout;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -132,7 +126,7 @@ public class ListUsersActivity extends Activity {
             }
         };
 
-        LocalBroadcastManager.getInstance(this).registerReceiver(receiver, new IntentFilter("com.sinch.messagingtutorial.app.ListUsersActivity"));
+        LocalBroadcastManager.getInstance(this).registerReceiver(receiver, new IntentFilter("dev.vision.voom.ListUsersActivity"));
     }
 
     @Override

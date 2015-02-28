@@ -12,7 +12,6 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
-
 import com.parse.FindCallback;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
@@ -27,22 +26,15 @@ import com.sinch.android.rtc.messaging.WritableMessage;
 
 import dev.vision.voom.R;
 import dev.vision.voom.SinchService;
-import dev.vision.voom.R.id;
-import dev.vision.voom.R.layout;
-import dev.vision.voom.SinchService.MessageServiceInterface;
 import dev.vision.voom.adapters.MessageAdapter;
 
 import org.apache.http.HttpResponse;
-import org.apache.http.NameValuePair;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.ResponseHandler;
-import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.BasicResponseHandler;
 import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.message.BasicNameValuePair;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;

@@ -4,6 +4,7 @@ public class DB{
 	
 	
 	public static final String CREATE_TABLE = "CREATE TABLE ";
+	public static final String DROP_TABLE = "DROP TABLE IF EXISTS ";
 	public static final String PRIMARY_KEY = "PRIMARY KEY";
 	public static final String FOREIGN_KEY = "FOREIGN KEY";
 	public static final String INTEGER = "INTEGER ";
