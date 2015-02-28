@@ -9,7 +9,7 @@
 	<classpathentry kind="lib" path="libs/bolts-android-1.1.4.jar"/>
 	<classpathentry kind="lib" path="libs/ParseCrashReporting-1.8.2.jar"/>
 	<classpathentry kind="lib" path="libs/Parse-1.8.2.jar"/>
-	<classpathentry kind="lib" path="libs/Pubnub-Android-Debug-3.7.2.jar"/>
 	<classpathentry kind="lib" path="libs/sinch-android-rtc-3.4.3.jar"/>
+	<classpathentry kind="lib" path="libs/Pubnub-Android-3.7.2.jar"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>
