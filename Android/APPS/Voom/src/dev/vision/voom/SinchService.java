@@ -1,14 +1,31 @@
 package dev.vision.voom;
 
+import java.io.IOException;
+import java.util.List;
+
+import org.apache.http.HttpResponse;
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.ResponseHandler;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.impl.client.BasicResponseHandler;
+import org.apache.http.impl.client.DefaultHttpClient;
+
 import android.app.Service;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Binder;
 import android.os.IBinder;
 import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
+import android.widget.Toast;
 
+import com.parse.FindCallback;
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
 import com.parse.ParseUser;
 import com.sinch.android.rtc.ClientRegistration;
+import com.sinch.android.rtc.PushPair;
 import com.sinch.android.rtc.Sinch;
 import com.sinch.android.rtc.SinchClient;
 import com.sinch.android.rtc.SinchClientListener;
@@ -16,9 +33,16 @@ import com.sinch.android.rtc.SinchError;
 import com.sinch.android.rtc.calling.Call;
 import com.sinch.android.rtc.calling.CallClient;
 import com.sinch.android.rtc.calling.CallClientListener;
+import com.sinch.android.rtc.messaging.Message;
 import com.sinch.android.rtc.messaging.MessageClient;
 import com.sinch.android.rtc.messaging.MessageClientListener;
+import com.sinch.android.rtc.messaging.MessageDeliveryInfo;
+import com.sinch.android.rtc.messaging.MessageFailureInfo;
 import com.sinch.android.rtc.messaging.WritableMessage;
+
+import dev.vision.voom.activity.IncomingCallScreenActivity;
+import dev.vision.voom.activity.MessagingActivity;
+import dev.vision.voom.adapters.MessageAdapter;
 
 public class SinchService extends Service implements SinchClientListener, CallClientListener {
 
@@ -230,6 +254,85 @@ public class SinchService extends Service implements SinchClientListener, CallCl
         
         public void setStartListener(StartFailedListener listener) {
             mListener = listener;
+        }
+    }
+    
+    private class MyMessageClientListener implements MessageClientListener {
+        @Override
+        public void onMessageFailed(MessageClient client, Message message,
+                                    MessageFailureInfo failureInfo) {
+            Toast.makeText(getApplicationContext(), "Message failed to send. " + failureInfo.getSinchError().getMessage().toString() , Toast.LENGTH_LONG).show();
+        }
+
+        @Override
+        public void onIncomingMessage(MessageClient client, Message message) {
+           // if (message.getSenderId().equals(recipientId)) {
+                WritableMessage writableMessage = new WritableMessage(message.getRecipientIds().get(0), message.getTextBody());
+           //}
+                //add message to database table "messages"
+                //Triggers : add message id to conversation as "lastMessage"
+        }
+
+        @Override
+        public void onMessageSent(MessageClient client, Message message, String recipientId) {
+
+            //Update message with id in "messages" with Status Sent
+
+        	
+            final WritableMessage writableMessage = new WritableMessage(message.getRecipientIds().get(0), message.getTextBody());
+
+            //only add message to parse database if it doesn't already exist there
+            ParseQuery<ParseObject> query = ParseQuery.getQuery("ParseMessage");
+            query.whereEqualTo("sinchId", message.getMessageId());
+            query.findInBackground(new FindCallback<ParseObject>() {
+                @Override
+                public void done(List<ParseObject> messageList, com.parse.ParseException e) {
+                    if (e == null) {
+                        if (messageList.size() == 0) {
+                            ParseObject parseMessage = new ParseObject("ParseMessage");
+                            parseMessage.put("senderId", currentUserId);
+                            parseMessage.put("recipientId", writableMessage.getRecipientIds().get(0));
+                            parseMessage.put("messageText", writableMessage.getTextBody());
+                            parseMessage.put("sinchId", writableMessage.getMessageId());
+                            parseMessage.saveInBackground();
+
+                        }
+                    }
+                }
+            });
+        }
+
+        @Override
+        public void onMessageDelivered(MessageClient client, MessageDeliveryInfo deliveryInfo) {}
+
+        @Override
+        public void onShouldSendPushData(MessageClient client, Message message, List<PushPair> pushPairs) {
+            final String regId = new String(pushPairs.get(0).getPushData());
+
+            class SendPushTask extends AsyncTask<Void, Void, Void> {
+
+                @Override
+                protected Void doInBackground(Void... voids) {
+                    HttpClient httpclient = new DefaultHttpClient();
+                    HttpPost httppost = new HttpPost("http://your-domain.com?reg_id=" + regId);
+
+                    try {
+                        HttpResponse response = httpclient.execute(httppost);
+                        ResponseHandler<String> handler = new BasicResponseHandler();
+                        Log.d("HttpResponse", handler.handleResponse(response));
+                    } catch (ClientProtocolException e) {
+                        Log.d("ClientProtocolException", e.toString());
+                    } catch (IOException e) {
+                        Log.d("IOException", e.toString());
+                    }
+
+                    return null;
+                }
+
+            }
+
+            (new SendPushTask()).execute();
+
         }
     }
 

@@ -1,12 +1,8 @@
 package dev.vision.voom.activity;
 
-import android.app.Activity;
-import android.content.ComponentName;
 import android.content.Intent;
-import android.content.ServiceConnection;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.os.IBinder;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
@@ -25,10 +21,10 @@ import com.sinch.android.rtc.messaging.MessageDeliveryInfo;
 import com.sinch.android.rtc.messaging.MessageFailureInfo;
 import com.sinch.android.rtc.messaging.WritableMessage;
 
-import dev.vision.voom.BaseActivity;
 import dev.vision.voom.R;
 import dev.vision.voom.SinchService;
 import dev.vision.voom.adapters.MessageAdapter;
+import dev.vision.voom.parse.ParseMessage;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.ClientProtocolException;
@@ -39,7 +35,6 @@ import org.apache.http.impl.client.BasicResponseHandler;
 import org.apache.http.impl.client.DefaultHttpClient;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -53,18 +48,20 @@ public class MessagingActivity extends BaseActivity {
     private ListView messagesList;
     private String currentUserId;
     private MessageClientListener messageClientListener = new MyMessageClientListener();
-    private ArrayList<String> regIds;
+    //private ArrayList<String> regIds;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.messaging);
 
-        bindService(new Intent(this, SinchService.class), this, BIND_AUTO_CREATE);
+        //bindService(new Intent(this, SinchService.class), this, BIND_AUTO_CREATE);
 
         Intent intent = getIntent();
         recipientId = intent.getStringExtra("RECIPIENT_ID");
         currentUserId = ParseUser.getCurrentUser().getObjectId();
+        
+        Toast.makeText(getApplicationContext(), recipientId + " / " +currentUserId , Toast.LENGTH_SHORT).show();
         
         messagesList = (ListView) findViewById(R.id.listMessages);
         messageAdapter = new MessageAdapter(this);
@@ -84,17 +81,17 @@ public class MessagingActivity extends BaseActivity {
     //get previous messages from parse & display
     private void populateMessageHistory() {
         String[] userIds = {currentUserId, recipientId};
-        ParseQuery<ParseObject> query = ParseQuery.getQuery("ParseMessage");
+        ParseQuery<ParseMessage> query = ParseMessage.getQuery();
         query.whereContainedIn("senderId", Arrays.asList(userIds));
         query.whereContainedIn("recipientId", Arrays.asList(userIds));
         query.orderByAscending("createdAt");
-        query.findInBackground(new FindCallback<ParseObject>() {
+        query.findInBackground(new FindCallback<ParseMessage>() {
             @Override
-            public void done(List<ParseObject> messageList, com.parse.ParseException e) {
+            public void done(List<ParseMessage> messageList, com.parse.ParseException e) {
                 if (e == null) {
                     for (int i = 0; i < messageList.size(); i++) {
                         WritableMessage message = new WritableMessage(messageList.get(i).get("recipientId").toString(), messageList.get(i).get("messageText").toString());
-                        if (messageList.get(i).get("senderId").toString().equals(currentUserId)) {
+                        if (messageList.get(i).getSenderId().toString().equals(currentUserId)) {
                             messageAdapter.addMessage(message, MessageAdapter.DIRECTION_OUTGOING);
                         } else {
                             messageAdapter.addMessage(message, MessageAdapter.DIRECTION_INCOMING);
@@ -112,6 +109,9 @@ public class MessagingActivity extends BaseActivity {
             return;
         }
 
+        final WritableMessage writableMessage = new WritableMessage(recipientId, messageBody);
+        messageAdapter.addMessage(writableMessage, MessageAdapter.DIRECTION_OUTGOING);
+
         messageService.sendMessage(recipientId, messageBody);
         messageBodyField.setText("");
     }
@@ -119,7 +119,7 @@ public class MessagingActivity extends BaseActivity {
     @Override
     public void onDestroy() {
         messageService.removeMessageClientListener(messageClientListener);
-        unbindService(this);
+        //unbindService(this);
         super.onDestroy();
     }
 
@@ -138,7 +138,7 @@ public class MessagingActivity extends BaseActivity {
         @Override
         public void onMessageFailed(MessageClient client, Message message,
                                     MessageFailureInfo failureInfo) {
-            Toast.makeText(MessagingActivity.this, "Message failed to send.", Toast.LENGTH_LONG).show();
+            Toast.makeText(MessagingActivity.this, "Message failed to send. " + failureInfo.getSinchError().getMessage().toString() , Toast.LENGTH_LONG).show();
         }
 
         @Override
@@ -153,23 +153,23 @@ public class MessagingActivity extends BaseActivity {
         public void onMessageSent(MessageClient client, Message message, String recipientId) {
 
             final WritableMessage writableMessage = new WritableMessage(message.getRecipientIds().get(0), message.getTextBody());
-
+            messageAdapter.changeStatus(message);
             //only add message to parse database if it doesn't already exist there
-            ParseQuery<ParseObject> query = ParseQuery.getQuery("ParseMessage");
+            ParseQuery<ParseMessage> query = ParseMessage.getQuery();
             query.whereEqualTo("sinchId", message.getMessageId());
-            query.findInBackground(new FindCallback<ParseObject>() {
+            query.findInBackground(new FindCallback<ParseMessage>() {
                 @Override
-                public void done(List<ParseObject> messageList, com.parse.ParseException e) {
+                public void done(List<ParseMessage> messageList, com.parse.ParseException e) {
                     if (e == null) {
                         if (messageList.size() == 0) {
-                            ParseObject parseMessage = new ParseObject("ParseMessage");
-                            parseMessage.put("senderId", currentUserId);
-                            parseMessage.put("recipientId", writableMessage.getRecipientIds().get(0));
-                            parseMessage.put("messageText", writableMessage.getTextBody());
-                            parseMessage.put("sinchId", writableMessage.getMessageId());
+                        	ParseMessage parseMessage = new ParseMessage();
+                            parseMessage.setSenderId(currentUserId);
+                            parseMessage.setRecipientId(writableMessage.getRecipientIds().get(0));
+                            parseMessage.setMessage(writableMessage.getTextBody());
+                            parseMessage.setSinchId(writableMessage.getMessageId());
                             parseMessage.saveInBackground();
 
-                            messageAdapter.addMessage(writableMessage, MessageAdapter.DIRECTION_OUTGOING);
+                           // messageAdapter.addMessage(writableMessage, MessageAdapter.DIRECTION_OUTGOING);
                         }
                     }
                 }

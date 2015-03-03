@@ -8,5 +8,6 @@ public class CREDENTIALS{
     public static final String SINCH_ENVIRONMENT = "sandbox.sinch.com";
     public static final String PARSE_APP_ID = "NvpeiVtQvPaunI7itMwzrd2M5wnRBd6Ri37u3qto";
     public static final String PARSE_CLIENT_KEY = "eGqcWfQoAZSUMZ3O7QGLd1fm4jLbGcLcSyUZKyKp";
+	public static final String GDC_PROJECT_NUBMER = "724814270643";
     
 }

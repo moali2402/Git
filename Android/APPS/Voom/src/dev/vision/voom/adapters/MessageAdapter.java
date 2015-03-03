@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import com.sinch.android.rtc.messaging.Message;
 import com.sinch.android.rtc.messaging.WritableMessage;
 
 import dev.vision.voom.R;
@@ -69,9 +70,9 @@ public class MessageAdapter extends BaseAdapter {
         if (convertView == null) {
             int res = 0;
             if (direction == DIRECTION_INCOMING) {
-                res = R.layout.message_right;
-            } else if (direction == DIRECTION_OUTGOING) {
                 res = R.layout.message_left;
+            } else if (direction == DIRECTION_OUTGOING) {
+                res = R.layout.message_right;
             }
             convertView = layoutInflater.inflate(res, viewGroup, false);
         }
@@ -83,5 +84,13 @@ public class MessageAdapter extends BaseAdapter {
 
         return convertView;
     }
+
+	public void changeStatus(Message message) {
+		for(Pair<WritableMessage, Integer> pair : messages	){
+			if(pair.first.getMessageId().equals(message.getMessageId())){
+				
+			}
+		}
+	}
 }
 

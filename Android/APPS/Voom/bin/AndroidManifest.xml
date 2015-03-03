@@ -5,6 +5,14 @@
     android:versionName="1.0" >
     
     
+    <uses-feature
+            android:name="android.hardware.microphone"
+            android:required="false"/>
+
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
@@ -41,17 +49,13 @@
             </intent-filter>
         </activity>
         
-        <activity
-            android:name=".activity.ListUsersActivity"
-            android:screenOrientation="portrait">
-        </activity>
-        
-        
-        <activity android:name=".activity.MessagingActivity"
-                  android:screenOrientation="portrait">
-        </activity>
+        <activity android:name=".activity.ListUsersActivity" android:screenOrientation="portrait"/>        
+        <activity android:name=".activity.MessagingActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".activity.PlaceCallActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".activity.CallScreenActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".activity.IncomingCallScreenActivity" android:screenOrientation="portrait"
+                  android:noHistory="true"/>
 
-        
         <receiver
             android:name=".GcmBroadcastReceiver"
             android:permission="com.google.android.c2dm.permission.SEND" >

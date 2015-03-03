@@ -4,10 +4,13 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+
 import com.google.android.gms.gcm.GoogleCloudMessaging;
 import com.parse.LogInCallback;
 import com.parse.ParseUser;
 import com.parse.SignUpCallback;
+
+import dev.vision.voom.CREDENTIALS;
 import dev.vision.voom.R;
 import dev.vision.voom.SinchService;
 import android.view.View;
@@ -32,6 +35,7 @@ public class LoginActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        /*
         final GoogleCloudMessaging gcm = GoogleCloudMessaging.getInstance(getApplicationContext());
 
         class RegisterGcmTask extends AsyncTask<Void, Void, String> {
@@ -59,10 +63,11 @@ public class LoginActivity extends Activity {
                 startService(serviceIntent);
             }
         }
-
+         */
         ParseUser currentUser = ParseUser.getCurrentUser();
         if (currentUser != null) {
-            (new RegisterGcmTask()).execute();
+            //new RegisterGcmTask().execute();
+        	startActivity();
         }
 
         setContentView(R.layout.activity_login);
@@ -81,7 +86,8 @@ public class LoginActivity extends Activity {
                 ParseUser.logInInBackground(username, password, new LogInCallback() {
                     public void done(ParseUser user, com.parse.ParseException e) {
                         if (user != null) {
-                            (new RegisterGcmTask()).execute();
+                            //new RegisterGcmTask().execute();
+                        	startActivity();
                         } else {
                             Toast.makeText(getApplicationContext(),
                                 "Wrong username/password combo",
@@ -106,7 +112,8 @@ public class LoginActivity extends Activity {
                 user.signUpInBackground(new SignUpCallback() {
                     public void done(com.parse.ParseException e) {
                         if (e == null) {
-                            (new RegisterGcmTask()).execute();
+                            //(new RegisterGcmTask()).execute();
+                        	startActivity();
                         } else {
                             Toast.makeText(getApplicationContext(),
                                 "There was an error signing up."
@@ -118,7 +125,17 @@ public class LoginActivity extends Activity {
         });
     }
 
-    @Override
+    private void startActivity() {
+    	intent = new Intent(getApplicationContext(), ListUsersActivity.class);
+        serviceIntent = new Intent(getApplicationContext(), SinchService.class);
+
+        serviceIntent.putExtra("regId", CREDENTIALS.GDC_PROJECT_NUBMER);
+
+        startActivity(intent);
+        startService(serviceIntent);		
+	}
+
+	@Override
     public void onDestroy() {
         stopService(new Intent(this, SinchService.class));
         super.onDestroy();
