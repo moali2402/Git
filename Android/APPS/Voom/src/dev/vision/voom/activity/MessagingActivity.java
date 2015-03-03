@@ -10,7 +10,6 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.parse.FindCallback;
-import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
 import com.sinch.android.rtc.PushPair;
@@ -82,16 +81,16 @@ public class MessagingActivity extends BaseActivity {
     private void populateMessageHistory() {
         String[] userIds = {currentUserId, recipientId};
         ParseQuery<ParseMessage> query = ParseMessage.getQuery();
-        query.whereContainedIn("senderId", Arrays.asList(userIds));
-        query.whereContainedIn("recipientId", Arrays.asList(userIds));
-        query.orderByAscending("createdAt");
+        query.whereContainedIn(ParseMessage.SENDER_ID, Arrays.asList(userIds));
+        query.whereContainedIn(ParseMessage.RECIPIENT_ID, Arrays.asList(userIds));
+        query.orderByAscending(ParseMessage.CREATED_AT);
         query.findInBackground(new FindCallback<ParseMessage>() {
             @Override
             public void done(List<ParseMessage> messageList, com.parse.ParseException e) {
                 if (e == null) {
                     for (int i = 0; i < messageList.size(); i++) {
-                        WritableMessage message = new WritableMessage(messageList.get(i).get("recipientId").toString(), messageList.get(i).get("messageText").toString());
-                        if (messageList.get(i).getSenderId().toString().equals(currentUserId)) {
+                        WritableMessage message = new WritableMessage(messageList.get(i).getRecipientId(), messageList.get(i).getMessage());
+                        if (messageList.get(i).getSenderId().equals(currentUserId)) {
                             messageAdapter.addMessage(message, MessageAdapter.DIRECTION_OUTGOING);
                         } else {
                             messageAdapter.addMessage(message, MessageAdapter.DIRECTION_INCOMING);
@@ -154,9 +153,10 @@ public class MessagingActivity extends BaseActivity {
 
             final WritableMessage writableMessage = new WritableMessage(message.getRecipientIds().get(0), message.getTextBody());
             messageAdapter.changeStatus(message);
+            
             //only add message to parse database if it doesn't already exist there
             ParseQuery<ParseMessage> query = ParseMessage.getQuery();
-            query.whereEqualTo("sinchId", message.getMessageId());
+            query.whereEqualTo(ParseMessage.SINCH_ID, message.getMessageId());
             query.findInBackground(new FindCallback<ParseMessage>() {
                 @Override
                 public void done(List<ParseMessage> messageList, com.parse.ParseException e) {

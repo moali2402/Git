@@ -39,11 +39,28 @@ public class ListUsersActivity extends Activity {
     private ProgressDialog progressDialog;
     private BroadcastReceiver receiver = null;
     Contact c;
+	protected boolean dontShow;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_users);
 
+
+        receiver = new BroadcastReceiver() {
+            @Override
+            public void onReceive(Context context, Intent intent) {
+                Boolean success = intent.getBooleanExtra("success", false);
+                dontShow = true;
+                if(progressDialog!=null)
+                progressDialog.dismiss();
+                if (!success) {
+                    Toast.makeText(getApplicationContext(), "Messaging service failed to start", Toast.LENGTH_LONG).show();
+                }
+            }
+        };
+
+        LocalBroadcastManager.getInstance(this).registerReceiver(receiver, new IntentFilter("dev.vision.voom.ListUsersActivity"));
+    
 
         logoutButton = (Button) findViewById(R.id.logoutButton);
         usersListView = (ListView)findViewById(R.id.usersListView);
@@ -55,7 +72,7 @@ public class ListUsersActivity extends Activity {
         
         usersListView.setAdapter(contactAdapter);
         
-        
+        if(!dontShow)
         showSpinner();
 
         logoutButton.setOnClickListener(new View.OnClickListener() {
@@ -83,22 +100,22 @@ public class ListUsersActivity extends Activity {
     private void setConversationsList() {
               
 	     ParseQuery<Contact> contacts = Contact.getUpdatedQuery();
-	     contacts.whereNotEqualTo("objectId", c.getObjectId());
+	     contacts.whereNotEqualTo(Contact.ID, c.getObjectId());
 
 	     ParseQuery<Profiles> usersQ= Profiles.getQuery();
-	     usersQ.whereEqualTo("users", c);
+	     usersQ.whereEqualTo(Profiles.USERS, c);
 	    
 	     ParseQuery<Profiles> defaultQ = Profiles.getQuery();
-    	 defaultQ.whereEqualTo("isDefault", true);
+    	 defaultQ.whereEqualTo(Profiles.IS_DEFAULT, true);
     	
     	 ArrayList<ParseQuery<Profiles>> qu = new ArrayList<ParseQuery<Profiles>>();
     	 qu.add(usersQ);
     	 qu.add(defaultQ);
     	 
          ParseQuery<Profiles> profilesQ = ParseQuery.or(qu);     
-         profilesQ.include("user");
+         profilesQ.include(Profiles.USER);
 
-         profilesQ.whereMatchesKeyInQuery("user", "objectId", contacts); 
+         profilesQ.whereMatchesKeyInQuery(Profiles.USER, Contact.ID, contacts); 
 	     
          profilesQ.findInBackground(new FindCallback<Profiles>() {
 	    	 public void done(List<Profiles> p, ParseException e) {
@@ -160,18 +177,6 @@ public class ListUsersActivity extends Activity {
         progressDialog.setMessage("Please wait...");
         progressDialog.show();
 
-        receiver = new BroadcastReceiver() {
-            @Override
-            public void onReceive(Context context, Intent intent) {
-                Boolean success = intent.getBooleanExtra("success", false);
-                progressDialog.dismiss();
-                if (!success) {
-                    Toast.makeText(getApplicationContext(), "Messaging service failed to start", Toast.LENGTH_LONG).show();
-                }
-            }
-        };
-
-        LocalBroadcastManager.getInstance(this).registerReceiver(receiver, new IntentFilter("dev.vision.voom.ListUsersActivity"));
     }
 
     @Override

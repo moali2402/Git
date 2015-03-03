@@ -39,10 +39,7 @@ import com.sinch.android.rtc.messaging.MessageClientListener;
 import com.sinch.android.rtc.messaging.MessageDeliveryInfo;
 import com.sinch.android.rtc.messaging.MessageFailureInfo;
 import com.sinch.android.rtc.messaging.WritableMessage;
-
 import dev.vision.voom.activity.IncomingCallScreenActivity;
-import dev.vision.voom.activity.MessagingActivity;
-import dev.vision.voom.adapters.MessageAdapter;
 
 public class SinchService extends Service implements SinchClientListener, CallClientListener {
 

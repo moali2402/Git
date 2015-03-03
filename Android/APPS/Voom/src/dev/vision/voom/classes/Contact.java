@@ -1,11 +1,13 @@
 package dev.vision.voom.classes;
 
-import java.util.ArrayList;
+
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
 
 public class Contact extends ParseUser{
 	
+	public static final String ID = "objectId";
+
 	/*
 	ArrayList<Profiles> profile = new ArrayList<Profiles>();
 	
