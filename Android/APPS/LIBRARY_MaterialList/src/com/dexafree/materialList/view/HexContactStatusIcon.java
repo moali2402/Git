@@ -20,7 +20,9 @@ public class HexContactStatusIcon extends ImageView {
 	private float width, height;
 	private int maskColor;
 	Paint p;
-	private int status = Color.GRAY;
+	private int status = Color.WHITE;
+	private Paint borderColor;
+	private Paint outerColor;
 
 	
 	public HexContactStatusIcon(Context context) {
@@ -46,12 +48,35 @@ public class HexContactStatusIcon extends ImageView {
 	    //p.setStrokeJoin(Join.ROUND);
 	    p.setColor(status);
 	    p.setStyle(Style.STROKE);
-	    p.setStrokeWidth(5);
+	    p.setStrokeWidth(4);
 	    //p.setShadowLayer(20, 0, 0, Color.BLACK);
 	    p.setPathEffect(new CornerPathEffect(10));
 	    hexagonPath = new Path();
 	    hexagonBorderPath = new Path();
 	    maskColor = 0xFF01FF77;
+	    
+	    
+
+		borderColor = new Paint();
+		borderColor.setAntiAlias(true);
+		borderColor.setStrokeCap(Cap.ROUND);
+	    //p.setStrokeJoin(Join.ROUND);
+		borderColor.setColor(Color.WHITE);
+		borderColor.setStyle(Style.STROKE);
+		borderColor.setStrokeWidth(2);
+	    //p.setShadowLayer(20, 0, 0, Color.BLACK);
+		borderColor.setPathEffect(new CornerPathEffect(10));
+		
+
+		outerColor = new Paint();
+		outerColor.setAntiAlias(true);
+		outerColor.setStrokeCap(Cap.ROUND);
+	    //p.setStrokeJoin(Join.ROUND);
+		outerColor.setColor(Color.BLACK);
+		outerColor.setStyle(Style.STROKE);
+		outerColor.setStrokeWidth(5);
+	    //p.setShadowLayer(20, 0, 0, Color.BLACK);
+		outerColor.setPathEffect(new CornerPathEffect(10));
 	}
 	
 	public void setRadius(float r) {
@@ -104,9 +129,16 @@ public class HexContactStatusIcon extends ImageView {
 	    super.onDraw(c);
 	    
 	    c.restore();
+
+	    c.drawPath(hexagonPath,outerColor);
+	    
 	    c.drawPath(hexagonPath,p);
+
+	    c.drawPath(hexagonBorderPath,borderColor);
+
+	    
+
 	}
-	
 	
 
 	@SuppressLint("NewApi")

@@ -41,8 +41,8 @@
                 android:paddingBottom="0dp"
                 android:paddingLeft="@dimen/small_padding"
                 android:paddingRight="@dimen/small_padding"
-                
-                android:textSize="18sp"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="16sp"
                 
                 tools:text="Title"/>
 
@@ -53,7 +53,7 @@
                 android:textColor="@color/description_color"
                 android:paddingLeft="@dimen/small_padding"
                 android:paddingRight="@dimen/small_padding"
-                android:textSize="@dimen/description_size"
+                android:textSize="14sp"
                 android:layout_below="@+id/titleTextView"
                 tools:text="Test description"/>
             
