@@ -11,6 +11,7 @@ import android.support.v4.content.LocalBroadcastManager;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -40,6 +41,7 @@ public class ListUsersActivity extends Activity {
     private BroadcastReceiver receiver = null;
     Contact c;
 	protected boolean dontShow;
+	private ImageView profilesButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,7 +66,8 @@ public class ListUsersActivity extends Activity {
 
         logoutButton = (Button) findViewById(R.id.logoutButton);
         usersListView = (ListView)findViewById(R.id.usersListView);
-        
+        profilesButton = (ImageView) findViewById(R.id.imageView1);
+
         c = ((Contact)Contact.getCurrentUser());
         // currentUserId = c.getObjectId();
         
@@ -89,6 +92,14 @@ public class ListUsersActivity extends Activity {
             @Override
             public void onItemClick(AdapterView<?> a, View v, int i, long l) {
                 openConversation(profiles, i);
+            }
+        });
+        
+        profilesButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), Activity_Profiles.class);
+                startActivity(intent);
             }
         });
         //setConversationsList();

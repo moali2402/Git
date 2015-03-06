@@ -1,6 +1,7 @@
 package dev.vision.voom;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
 
 import org.apache.http.HttpResponse;
@@ -21,6 +22,8 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.parse.FindCallback;
+import com.parse.Parse;
+import com.parse.ParseCloud;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
@@ -39,6 +42,7 @@ import com.sinch.android.rtc.messaging.MessageClientListener;
 import com.sinch.android.rtc.messaging.MessageDeliveryInfo;
 import com.sinch.android.rtc.messaging.MessageFailureInfo;
 import com.sinch.android.rtc.messaging.WritableMessage;
+
 import dev.vision.voom.activity.IncomingCallScreenActivity;
 
 public class SinchService extends Service implements SinchClientListener, CallClientListener {
@@ -305,7 +309,13 @@ public class SinchService extends Service implements SinchClientListener, CallCl
         @Override
         public void onShouldSendPushData(MessageClient client, Message message, List<PushPair> pushPairs) {
             final String regId = new String(pushPairs.get(0).getPushData());
+            HashMap<String, Object> params = new HashMap<String, Object>();
+            params.put("recipientId", currentUserId);          
+            params.put("message", regId);          
 
+            ParseCloud.callFunctionInBackground("sendPushToUser", params);
+            /*
+  
             class SendPushTask extends AsyncTask<Void, Void, Void> {
 
                 @Override
@@ -329,6 +339,7 @@ public class SinchService extends Service implements SinchClientListener, CallCl
             }
 
             (new SendPushTask()).execute();
+            */
 
         }
     }

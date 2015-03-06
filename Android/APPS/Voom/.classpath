@@ -11,5 +11,6 @@
 	<classpathentry kind="lib" path="libs/Parse-1.8.2.jar"/>
 	<classpathentry kind="lib" path="libs/sinch-android-rtc-3.4.3.jar"/>
 	<classpathentry kind="lib" path="libs/Pubnub-Android-3.7.2.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/RecyclerView"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>

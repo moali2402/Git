@@ -33,7 +33,6 @@ import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.ListAdapter;
 import android.widget.Scroller;
-
 import java.util.ArrayList;
 
 /**
@@ -57,7 +56,6 @@ import java.util.ArrayList;
  * Be careful with this - not everything may be how you expect if you assume this to be
  * a regular old {@link android.widget.ListView}
  */
-@SuppressLint({ "Override", "WrongCall" })
 public abstract class ExtendableListView extends AbsListView {
 
     private static final String TAG = "ExtendableListView";
@@ -267,11 +265,11 @@ public abstract class ExtendableListView extends AbsListView {
         }
 
         mDataChanged = true;
-        mItemCount = adapter != null ? adapter.getCount() : 0;
+        mItemCount = mAdapter != null ? mAdapter.getCount() : 0;
 
-        if (adapter != null) {
-            adapter.registerDataSetObserver(mObserver);
-            mRecycleBin.setViewTypeCount(adapter.getViewTypeCount());
+        if (mAdapter != null) {
+            mAdapter.registerDataSetObserver(mObserver);
+            mRecycleBin.setViewTypeCount(mAdapter.getViewTypeCount());
         }
 
         requestLayout();
@@ -358,7 +356,7 @@ public abstract class ExtendableListView extends AbsListView {
     public void addHeaderView(View v) {
         addHeaderView(v, null, true);
     }
-
+    
     public int getHeaderViewsCount() {
         return mHeaderViewInfos.size();
     }
@@ -2021,7 +2019,7 @@ public abstract class ExtendableListView extends AbsListView {
      * we have an empty view, display it.  In all the other cases, make sure that the listview
      * is VISIBLE and that the empty view is GONE (if it's not null).
      */
-    private void updateEmptyStatus() {
+    @SuppressLint("WrongCall") private void updateEmptyStatus() {
         boolean empty = getAdapter() == null || getAdapter().isEmpty();
         if (isInFilterMode()) {
             empty = false;

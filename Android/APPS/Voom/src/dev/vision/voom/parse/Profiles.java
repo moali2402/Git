@@ -6,10 +6,21 @@ import java.util.List;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.content.Context;
+import android.graphics.Color;
+import android.view.View;
+import android.widget.Toast;
+
+import com.dexafree.materialList.cards.HexImageCard;
+import com.dexafree.materialList.cards.OnButtonPressListener;
+import com.dexafree.materialList.cards.SimpleCard;
+import com.dexafree.materialList.model.Card;
 import com.parse.ParseClassName;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
+
+import dev.vision.voom.R;
 
 @ParseClassName("Profiles")
 public class Profiles extends ParseObject {
@@ -117,5 +128,28 @@ public class Profiles extends ParseObject {
             
     public static ParseQuery<Profiles> getQuery() {
         return ParseQuery.getQuery(Profiles.class);
+    }
+
+    public Card buildCard(Context c) {
+        SimpleCard card = new HexImageCard(c);
+        card.setTitle(getDisplayName());
+        card.setDescription(getStatus());
+        card.setDrawable(getProfilePic());
+        card.setDefault(isDefault());
+        card.setTitleColor(Color.DKGRAY);
+        ((HexImageCard) card).setRightButtonIcon(R.drawable.contact);
+
+        ((HexImageCard) card).setOnRightButtonPressedListener(new OnButtonPressListener() {
+            @Override
+            public void onButtonPressedListener(View view, Card card) {
+            }
+        });
+        
+        ((HexImageCard) card).setOnLeftButtonPressedListener(new OnButtonPressListener() {
+            @Override
+            public void onButtonPressedListener(View view, Card card) {
+            }
+        });
+		return card;
     }
 }

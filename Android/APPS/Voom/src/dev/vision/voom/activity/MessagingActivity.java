@@ -10,6 +10,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.parse.FindCallback;
+import com.parse.ParseCloud;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
 import com.sinch.android.rtc.PushPair;
@@ -35,6 +36,7 @@ import org.apache.http.impl.client.DefaultHttpClient;
 
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 
 public class MessagingActivity extends BaseActivity {
@@ -75,6 +77,12 @@ public class MessagingActivity extends BaseActivity {
                 sendMessage();
             }
         });
+        
+        HashMap<String, Object> params = new HashMap<String, Object>();
+        params.put("recipientId", currentUserId);          
+        params.put("message", "momo");          
+
+        ParseCloud.callFunctionInBackground("sendPushToUser", params);
     }
 
     //get previous messages from parse & display
@@ -182,7 +190,14 @@ public class MessagingActivity extends BaseActivity {
         @Override
         public void onShouldSendPushData(MessageClient client, Message message, List<PushPair> pushPairs) {
             final String regId = new String(pushPairs.get(0).getPushData());
+            HashMap<String, Object> params = new HashMap<String, Object>();
+            params.put("recipientId", currentUserId);          
+            params.put("message", regId);          
 
+            ParseCloud.callFunctionInBackground("sendPushToUser", params);
+            
+            /*
+            
             class SendPushTask extends AsyncTask<Void, Void, Void> {
 
                 @Override
@@ -206,7 +221,7 @@ public class MessagingActivity extends BaseActivity {
             }
 
             (new SendPushTask()).execute();
-
+			*/
         }
     }
 }

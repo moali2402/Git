@@ -1,6 +1,7 @@
 package dev.vision.voom.database;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
@@ -30,5 +31,15 @@ public class VoomDBHelper extends SQLiteOpenHelper {
     
     onCreate(db);
   }
+
+public Cursor getAllNotifications() {
+	// TODO Auto-generated method stub
+	return null;
+}
+
+public void insertNotification(String string) {
+	// TODO Auto-generated method stub
+	
+}
 
 } 

@@ -3,9 +3,12 @@ package dev.vision.voom.activity;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+
 import com.parse.LogInCallback;
+import com.parse.ParseInstallation;
 import com.parse.ParseUser;
 import com.parse.SignUpCallback;
+
 import dev.vision.voom.CREDENTIALS;
 import dev.vision.voom.R;
 import dev.vision.voom.SinchService;
@@ -61,6 +64,9 @@ public class LoginActivity extends Activity {
         ParseUser currentUser = ParseUser.getCurrentUser();
         if (currentUser != null) {
             //new RegisterGcmTask().execute();
+            ParseInstallation ins = ParseInstallation.getCurrentInstallation();
+        	ins.put("user_id", currentUser.getObjectId());			
+        	ins.saveInBackground();
         	startActivity();
         }
 
@@ -126,12 +132,12 @@ public class LoginActivity extends Activity {
         serviceIntent.putExtra("regId", CREDENTIALS.GDC_PROJECT_NUBMER);
 
         startActivity(intent);
-        startService(serviceIntent);		
+        getApplicationContext().startService(serviceIntent);		
 	}
 
 	@Override
     public void onDestroy() {
-        stopService(new Intent(this, SinchService.class));
+        stopService(new Intent(getApplicationContext(), SinchService.class));
         super.onDestroy();
     }
 }

@@ -12,6 +12,7 @@ import dev.vision.voom.views.util.ColorGenerator;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -69,17 +70,23 @@ public class ContactAdapter extends BaseAdapter {
 		
 		
 		Profiles p = getItem(position);
+		String nameTxt = p.getDisplayName();
 		
-		name.setText(p.getDisplayName());
+		name.setText(nameTxt);
 		status.setText(p.getStatus());	
 		
+		String first = nameTxt.substring(0, 1);
+		int color = generator.getColor(first);
+		Drawable d = builder.build(first, color);
+        
         if (imageView != null) {
             if(p.getProfilePic() == null || p.getProfilePic().trim().isEmpty()) {
+            	/*
         		String first = p.getDisplayName().substring(0, 1);
-        		int color = generator.getColor(first);
-                imageView.setImageDrawable(builder.build(first, color));
+        		int color = generator.getColor(first);*/
+                imageView.setImageDrawable(d);
             } else {
-                Picasso.with(cx).load(p.getProfilePic()).into(imageView);
+                Picasso.with(cx).load(p.getProfilePic()).placeholder(d).into(imageView);
             }
         }
 		return convertView;

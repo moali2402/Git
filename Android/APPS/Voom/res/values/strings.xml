@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">MessagingTutorial</string>
-    <string name="login_activity_label">Sinch Messaging Tutorial</string>
+    <string name="app_name">Voom</string>
+    <string name="login_activity_label">Voom Login</string>
     <string name="username">USERNAME</string>
     <string name="password">PASSWORD</string>
     <string name="title_activity_list_users">ListUsersActivity</string>
